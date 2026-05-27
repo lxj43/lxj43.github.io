@@ -3,315 +3,154 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="个人简介 - 学习、项目与联系方式" />
-  <title>个人简介</title>
+  <meta name="description" content="李学均 - 个人简介、教育经历、科研竞赛与其他经历" />
+  <title>李学均 · 个人简介</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --bg: #0f1419;
-      --surface: #1a2332;
-      --border: #2d3a4f;
-      --text: #e8edf4;
-      --muted: #94a3b8;
-      --accent: #38bdf8;
-      --accent-dim: #0ea5e9;
-      --radius: 12px;
-      --shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: "Noto Sans SC", system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-      min-height: 100vh;
-    }
-
-    .bg-gradient {
-      position: fixed;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(56, 189, 248, 0.15), transparent),
-        radial-gradient(ellipse 60% 40% at 100% 100%, rgba(14, 165, 233, 0.08), transparent);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .container {
-      position: relative;
-      z-index: 1;
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 2rem 1.25rem 4rem;
-    }
-
-    header {
-      text-align: center;
-      padding: 3rem 0 2.5rem;
-    }
-
-    .avatar {
-      width: 96px;
-      height: 96px;
-      margin: 0 auto 1.25rem;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), var(--accent-dim));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--bg);
-      box-shadow: var(--shadow);
-    }
-
-    h1 {
-      font-size: 1.75rem;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      margin-bottom: 0.5rem;
-    }
-
-    .tagline {
-      color: var(--muted);
-      font-size: 1rem;
-      max-width: 28em;
-      margin: 0 auto;
-    }
-
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.5rem 1rem;
-      margin-top: 1.5rem;
-    }
-
-    nav a {
-      color: var(--accent);
-      text-decoration: none;
-      font-size: 0.9rem;
-      padding: 0.35rem 0.75rem;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      transition: background 0.2s, border-color 0.2s;
-    }
-
-    nav a:hover {
-      background: var(--surface);
-      border-color: var(--accent);
-    }
-
-    section {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.5rem 1.35rem;
-      margin-bottom: 1.25rem;
-      box-shadow: var(--shadow);
-    }
-
-    section h2 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--accent);
-      margin-bottom: 0.85rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    section p {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    section p + p {
-      margin-top: 0.75rem;
-    }
-
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      list-style: none;
-    }
-
-    .skills li {
-      font-size: 0.85rem;
-      padding: 0.35rem 0.75rem;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      color: var(--text);
-    }
-
-    .projects {
-      list-style: none;
-    }
-
-    .projects li {
-      padding: 1rem 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .projects li:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    .projects li:first-child {
-      padding-top: 0;
-    }
-
-    .projects h3 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      margin-bottom: 0.35rem;
-    }
-
-    .projects h3 a {
-      color: var(--text);
-      text-decoration: none;
-    }
-
-    .projects h3 a:hover {
-      color: var(--accent);
-    }
-
-    .projects p {
-      font-size: 0.88rem;
-    }
-
-    .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      list-style: none;
-    }
-
-    .contact-links a {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      color: var(--accent);
-      text-decoration: none;
-      font-size: 0.9rem;
-      padding: 0.5rem 1rem;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      transition: border-color 0.2s, transform 0.15s;
-    }
-
-    .contact-links a:hover {
-      border-color: var(--accent);
-      transform: translateY(-1px);
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 2rem;
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    footer a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 1.45rem;
-      }
-
-      section {
-        padding: 1.25rem 1rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <div class="bg-gradient" aria-hidden="true"></div>
-  <div class="container">
-    <header>
-      <div class="avatar" aria-hidden="true">我</div>
-      <h1>在这里填写你的姓名</h1>
-      <p class="tagline">在这里写一句简短介绍，例如：学生 / 开发者 · 关注数据分析与学习成长</p>
-      <nav aria-label="页面导航">
-        <a href="#about">关于我</a>
-        <a href="#skills">技能</a>
-        <a href="#projects">项目</a>
-        <a href="#contact">联系</a>
-      </nav>
+
+  <nav class="site-nav" aria-label="页面导览">
+    <a href="#top">首页</a>
+    <a href="#education">教育经历</a>
+    <a href="#research-competition">科研竞赛</a>
+    <a href="#other">其他经历</a>
+  </nav>
+
+  <div class="container" id="top">
+    <header class="profile">
+      <img class="avatar-img" src="images/avatar.jpg" alt="李学均证件照" width="120" height="150" />
+      <div class="profile-main">
+        <h1>李学均</h1>
+        <p class="tagline">
+          擅长利用博弈论思想对复杂决策问题建模，并通过构建多智能体协同系统解决问题；
+          现于双边议价博弈推演、企业 AI 应用识别、智慧居家养老与多节点关联分析等场景实际应用。
+        </p>
+        <ul class="profile-meta">
+          <li><strong>院校专业</strong>天津财经大学 · 数字经济（应用经济学 B+）</li>
+          <li><strong>政治面貌</strong>中共预备党员</li>
+          <li><strong>联系电话</strong><a href="tel:13820867115">13820867115</a></li>
+          <li><strong>电子邮箱</strong><a href="mailto:13820867115@163.com">13820867115@163.com</a></li>
+          <li><strong>GitHub</strong><a href="https://github.com/lxj43/" target="_blank" rel="noopener noreferrer">github.com/lxj43</a></li>
+        </ul>
+      </div>
     </header>
 
     <main>
-      <section id="about">
-        <h2>关于我</h2>
-        <p>
-          你好，欢迎访问我的个人主页。你可以在这里介绍自己的背景，例如就读院校、专业方向、
-          目前在做的事情，以及你感兴趣的研究或实践领域。
-        </p>
-        <p>
-          建议保持 2～3 段、每段 2～4 句话，让访客快速了解你是谁、在做什么、希望展示什么能力。
-        </p>
-      </section>
+      <section id="education">
+        <h2>教育经历</h2>
+        <div class="edu-header">
+          <p class="school">天津财经大学 · 数字经济（应用经济学 B+）</p>
+          <p class="detail">2023.09 — 至今</p>
+        </div>
+        <div class="edu-stats">
+          <span>专业排名 3/76</span>
+          <span>GPA 3.79 / 4.0</span>
+          <span>CET-4 549</span>
+          <span>CET-6 474</span>
+        </div>
 
-      <section id="skills">
-        <h2>技能与方向</h2>
-        <ul class="skills">
-          <li>Python</li>
-          <li>数据分析</li>
-          <li>Excel / SQL</li>
-          <li>Git & GitHub</li>
-          <li>（按需修改）</li>
+        <h3>主要课程</h3>
+        <ul class="course-grid">
+          <li>大数据管理方法与应用<span class="score">98</span></li>
+          <li>金融衍生工具<span class="score">97</span></li>
+          <li>证券投资学<span class="score">96</span></li>
+          <li>金融大数据分析与应用<span class="score">97</span></li>
+          <li>高等数学 II<span class="score">98</span></li>
+          <li>线性代数<span class="score">97</span></li>
+        </ul>
+
+        <h3>荣誉奖项</h3>
+        <ul class="honors-list">
+          <li>校优秀学生（2024—2025 学年）</li>
+          <li>校一等奖学金（2023—2024 学年）</li>
+          <li>校二等奖学金（2024—2025 学年）</li>
+          <li>院智汇精英荣誉称号（2024—2025 学年）</li>
         </ul>
       </section>
 
-      <section id="projects">
-        <h2>项目与作品</h2>
-        <ul class="projects">
+      <section id="research-competition">
+        <h2>科研竞赛</h2>
+
+        <h3>科研经历</h3>
+        <ul class="entry-list">
           <li>
-            <h3><a href="https://github.com/lxj43" target="_blank" rel="noopener noreferrer">项目名称一</a></h3>
-            <p>简要说明项目做了什么、用了什么技术、你负责哪一部分。可附 GitHub 仓库链接。</p>
+            <p class="entry-title">在投论文（第二作者）· EARS: Equilibrium-Aligned Reward Shaping with Strategic Memory for Decentralized Game-Theoretic Learning</p>
+            <ul class="entry-body">
+              <li>研究内容：提出面向竞争场景的多智能体学习框架 EARS，实现不完全信息博弈下的策略涌现与均衡收敛。</li>
+              <li>负责工作：参与多智能体策略演化机制与实验设计，对复杂博弈环境下的策略稳定性与均衡特征进行分析。</li>
+            </ul>
           </li>
           <li>
-            <h3><a href="https://github.com/lxj43" target="_blank" rel="noopener noreferrer">项目名称二</a></h3>
-            <p>课程作业、竞赛作品、实习项目等都可以写在这里，按时间或重要性排列。</p>
+            <p class="entry-title">在投论文（第三作者）· 《供应链视角下企业 AI 应用与 ESG 漂绿研究——基于自进化零样本大语言模型的证据》</p>
+            <ul class="entry-body">
+              <li>研究内容：基于自进化零样本大模型识别企业 AI 应用，研究其对企业漂绿行为及供应链溢出效应的影响。</li>
+              <li>负责工作：基于企业行为数据与供应链关系构建博弈模型与 AI 应用测度方法，完成全部实证建模与分析。</li>
+            </ul>
           </li>
+          <li>
+            <p class="entry-title">国家级大学生创新创业训练计划（核心成员）· 《惠 Python：智慧图谱驱动的场景化编程实训平台》</p>
+            <ul class="entry-body">
+              <li>研究内容：面向高校「AI+教育」教学场景，构建基于智能体交互与个性化推荐的经管学生 Python 学习平台。</li>
+              <li>负责工作：基于学习行为数据构建个性化学习路径模型，参与定制化题库的编写与题目推荐机制算法优化。</li>
+            </ul>
+          </li>
+          <li>
+            <p class="entry-title">国家级大学生创新创业训练计划（核心成员）· 《永远在家——数字化居家养老全过程解决方案》</p>
+            <ul class="entry-body">
+              <li>研究内容：结合人工智能与数字经济场景，构建集数据协同与多主体联动于一体的数字化居家养老解决方案。</li>
+              <li>负责工作：构建社区、老人与医院多主体博弈关系模型，引入 AI 辅助决策，优化居家养老服务与资源配置。</li>
+            </ul>
+          </li>
+          <li>
+            <p class="entry-title">软件著作权 · 《惠 Graph 图数据库可视化平台 V1.0》</p>
+            <ul class="entry-body">
+              <li>研究内容：面向复杂关系网络分析，开发基于图数据库的知识图谱可视化平台，并利用多智能体开展智能分析。</li>
+              <li>负责工作：基于复杂关系网络开展图建模与关联分析，通过多智能体辅助知识图谱构建与多节点协同分析。</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h3>竞赛获奖</h3>
+        <ul class="competition-list">
+          <li><span class="award">国家一等奖</span><span class="event">2025 年高教社杯全国大学生数学建模竞赛</span></li>
+          <li><span class="award">国家一等奖</span><span class="event">2025 年 iCAN 大学生创新创业大赛「精创杯」全国数字经济决策创新挑战赛</span></li>
+          <li><span class="award">国家二等奖</span><span class="event">2024 年高教社杯全国大学生数学建模竞赛</span></li>
+          <li><span class="award">国家二等奖</span><span class="event">2026 年第十二届全国大学生能源经济学术创意大赛</span></li>
+          <li><span class="award">国家二等奖</span><span class="event">2026 年全国企业模拟竞争大赛</span></li>
+          <li><span class="award">国家二等奖</span><span class="event">2025 年第七届全球校园人工智能算法精英大赛</span></li>
+          <li><span class="award">国家二等奖</span><span class="event">2024 年全国大学生数字贸易综合技能大赛</span></li>
+          <li><span class="award">国家三等奖</span><span class="event">2025 年美国大学生数学建模竞赛</span></li>
         </ul>
       </section>
 
-      <section id="contact">
-        <h2>联系方式</h2>
-        <ul class="contact-links">
-          <li><a href="https://github.com/lxj43" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-          <li><a href="mailto:your.email@example.com">邮箱</a></li>
+      <section id="other">
+        <h2>其他经历</h2>
+        <ul class="entry-list other-list">
+          <li>
+            <p class="entry-title">中科闻歌 · 博弈论与决策算法研究员</p>
+            <p class="entry-desc">对金融风险管理中多主体关联分析并搭建智能体，实时监控风险节点。</p>
+          </li>
+          <li>
+            <p class="entry-title">温州昶宏电子科技有限公司 · 财务助理</p>
+            <p class="entry-desc">搭建财务分析智能体可视化收支数据，并辅助撰写公司经营分析报告。</p>
+          </li>
+          <li>
+            <p class="entry-title">瑞安站春运「暖冬行动」· 青年志愿者</p>
+            <p class="entry-desc">负责智慧票务系统现场引导工作，并协助百余位乘客完成移动端操作。</p>
+          </li>
         </ul>
-        <p style="margin-top: 1rem;">
-          可将上方邮箱替换为你的真实地址；如有博客、知乎、LinkedIn 等，也可在
-          <code style="color: var(--accent); font-size: 0.85em;">index.html</code> 的联系方式区块继续添加链接。
-        </p>
       </section>
     </main>
 
     <footer>
-      <p>© <span id="year"></span> · 托管于 <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a></p>
+      <p>© <span id="year"></span> 李学均 · 托管于 <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a></p>
     </footer>
   </div>
+
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
