@@ -15,34 +15,84 @@
 
   <nav class="site-nav" id="site-nav" aria-label="页面导览"></nav>
 
-  <div class="container">
-    <header class="profile">
+  <div class="container container--wide">
+    <header class="profile page-hero">
       <img class="avatar-img" src="images/avatar.jpg" alt="李学均证件照" width="120" height="150" />
       <div class="profile-main">
+        <p class="eyebrow">Experience & Practice</p>
         <h1>实习与其他经历</h1>
-        <p class="tagline">在科研之外，通过实习与志愿服务将决策建模与数据分析能力落地到真实业务与场景中。</p>
+        <p class="tagline">在科研之外，通过实习与志愿服务将决策建模、数据分析、智能体应用和现场协作能力落地到真实业务与公共服务场景中。</p>
       </div>
     </header>
 
     <main>
-      <section id="other">
-        <div class="section-head">
-          <h2>实习及其他经历</h2>
+      <section class="experience-overview-section" aria-labelledby="experience-overview-title">
+        <div class="section-head section-head--split">
+          <h2 id="experience-overview-title">经历导览</h2>
+          <span class="section-note">业务实践、数据分析、公共服务与现场协同</span>
         </div>
-        <ul class="entry-list other-list">
-          <li>
-            <p class="entry-title">中科闻歌 · 博弈论与决策算法研究员</p>
-            <p class="entry-desc">对金融风险管理中多主体关联分析并搭建智能体，实时监控风险节点。</p>
-          </li>
-          <li>
-            <p class="entry-title">温州昶宏电子科技有限公司 · 财务助理</p>
-            <p class="entry-desc">搭建财务分析智能体可视化收支数据，并辅助撰写公司经营分析报告。</p>
-          </li>
-          <li>
-            <p class="entry-title">瑞安站春运「暖冬行动」· 青年志愿者</p>
-            <p class="entry-desc">负责智慧票务系统现场引导工作，并协助百余位乘客完成移动端操作。</p>
-          </li>
-        </ul>
+        <nav class="experience-nav-grid" aria-label="实习与实践导览">
+          <a class="experience-nav-card" href="#exp-wenge"><span>01</span><strong>中科闻歌</strong><em>博弈论与决策算法研究员</em></a>
+          <a class="experience-nav-card" href="#exp-finance"><span>02</span><strong>昶宏电子</strong><em>财务助理与分析智能体</em></a>
+          <a class="experience-nav-card" href="#exp-station"><span>03</span><strong>春运暖冬行动</strong><em>智慧票务现场服务</em></a>
+          <a class="experience-nav-card" href="#exp-marathon"><span>04</span><strong>天津马拉松</strong><em>赛事起点志愿服务</em></a>
+        </nav>
+      </section>
+
+      <section id="exp-wenge" class="experience-detail-card">
+        <div class="experience-copy">
+          <p class="project-kicker">Internship · Game Theory & Decision Algorithm</p>
+          <h2>中科闻歌 · 博弈论与决策算法研究员</h2>
+          <p class="experience-lead">围绕金融风险管理中的多主体关联关系开展分析，搭建智能体用于实时监控风险节点，使复杂关系网络中的异常变化能够被更直观地识别和追踪。</p>
+          <ul class="experience-points">
+            <li>梳理金融风险场景中的主体关系、风险传导路径与节点关联结构。</li>
+            <li>将博弈论视角引入多主体风险行为分析，辅助判断风险节点的重要性与联动特征。</li>
+            <li>参与智能体监控框架搭建，使模型分析结果能够服务于实时风险识别。</li>
+          </ul>
+        </div>
+        <figure class="experience-image-card"><img src="images/experience/experience-01.jpg" alt="中科闻歌实习图片占位" loading="lazy" onerror="this.parentElement.classList.add('is-missing'); this.remove();"><figcaption>金融风险 · 多主体关联分析</figcaption></figure>
+      </section>
+
+      <section id="exp-finance" class="experience-detail-card">
+        <div class="experience-copy">
+          <p class="project-kicker">Internship · Financial Analysis Agent</p>
+          <h2>温州昶宏电子科技有限公司 · 财务助理</h2>
+          <p class="experience-lead">面向企业经营分析需求，搭建财务分析智能体并可视化收支数据，辅助经营分析报告撰写，把数据整理、指标观察和业务表达结合起来。</p>
+          <ul class="experience-points">
+            <li>整理公司收支数据，提取收入、成本、费用等经营分析维度。</li>
+            <li>通过可视化方式呈现财务变化，辅助发现异常波动与经营趋势。</li>
+            <li>参与经营分析报告撰写，将数据结论转化为管理层可理解的业务表达。</li>
+          </ul>
+        </div>
+        <figure class="experience-image-card"><img src="images/experience/experience-02.jpg" alt="财务助理经历图片占位" loading="lazy" onerror="this.parentElement.classList.add('is-missing'); this.remove();"><figcaption>财务数据 · 智能体可视化</figcaption></figure>
+      </section>
+
+      <section id="exp-station" class="experience-detail-card">
+        <div class="experience-copy">
+          <p class="project-kicker">Volunteer · Smart Ticketing Service</p>
+          <h2>瑞安站春运「暖冬行动」· 青年志愿者</h2>
+          <p class="experience-lead">在春运高峰期参与车站现场服务，负责智慧票务系统引导，协助乘客完成移动端操作，提升现场通行效率和服务体验。</p>
+          <ul class="experience-points">
+            <li>在客流密集场景中进行秩序维护、流程引导与问题解答。</li>
+            <li>协助百余位乘客完成移动端票务操作，降低系统使用门槛。</li>
+            <li>积累面对真实用户的沟通、应急处理和现场协作经验。</li>
+          </ul>
+        </div>
+        <figure class="experience-image-card"><img src="images/experience/experience-03.jpg" alt="春运暖冬行动图片占位" loading="lazy" onerror="this.parentElement.classList.add('is-missing'); this.remove();"><figcaption>智慧票务 · 公共服务</figcaption></figure>
+      </section>
+
+      <section id="exp-marathon" class="experience-detail-card">
+        <div class="experience-copy">
+          <p class="project-kicker">Volunteer · Event Operation</p>
+          <h2>2025 年天津市马拉松起点处 · 志愿者</h2>
+          <p class="experience-lead">参与赛事起点处志愿服务，协助维护起点秩序、引导参赛者顺利开赛，并配合后勤补给保障，提升大型活动现场组织经验。</p>
+          <ul class="experience-points">
+            <li>参与起点区域秩序维护，保障参赛者按流程进入对应区域。</li>
+            <li>协助现场信息引导、人员疏导和基础后勤服务。</li>
+            <li>在高密度人群场景中训练执行力、协同意识和服务意识。</li>
+          </ul>
+        </div>
+        <figure class="experience-image-card"><img src="images/experience/experience-04.jpg" alt="天津马拉松志愿服务图片占位" loading="lazy" onerror="this.parentElement.classList.add('is-missing'); this.remove();"><figcaption>赛事服务 · 现场协同</figcaption></figure>
       </section>
     </main>
 

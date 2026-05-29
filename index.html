@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="李学均 - 个人主页：教育背景、科研经历、竞赛获奖与实习经历" />
+  <meta name="description" content="李学均 - 个人主页：数字经济、博弈论建模、多智能体系统、科研项目与竞赛获奖" />
   <title>李学均 · 个人主页</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,58 +15,152 @@
 
   <nav class="site-nav" id="site-nav" aria-label="页面导览"></nav>
 
-  <div class="container" id="top">
-    <header class="profile">
-      <img class="avatar-img" src="images/avatar.jpg" alt="李学均证件照" width="120" height="150" />
-      <div class="profile-main">
-        <h1>李学均</h1>
-        <p class="tagline">
-          擅长利用博弈论思想对复杂决策问题建模，并通过构建多智能体协同系统解决问题；
-          现于双边议价博弈推演、企业 AI 应用识别、智慧居家养老与多节点关联分析等场景实际应用。
-        </p>
-        <ul class="profile-meta">
+  <div class="container container--wide" id="top">
+    <header class="home-hero" aria-labelledby="hero-title">
+      <div class="hero-card hero-card--profile">
+        <div class="avatar-wrap avatar-wrap--home">
+          <img class="avatar-img" src="images/avatar.jpg" alt="李学均证件照" width="120" height="150" />
+          <span class="avatar-badge">AI × Game Theory</span>
+        </div>
+        <div class="profile-main profile-main--home">
+          <p class="eyebrow">Digital Economy · Multi-Agent Decision Making</p>
+          <h1 id="hero-title">李学均</h1>
+          <p class="tagline tagline--home">
+            擅长利用博弈论思想对复杂决策问题建模，并通过构建多智能体协同系统解决问题；
+            现于双边议价博弈推演、企业 AI 应用识别、智慧居家养老与多节点关联分析等场景实际应用。
+          </p>
+          <ul class="profile-tags profile-tags--hero" aria-label="研究与能力标签">
+            <li>博弈论建模</li>
+            <li>多智能体系统</li>
+            <li>数字经济</li>
+            <li>数学建模</li>
+            <li>AI 应用识别</li>
+          </ul>
+        </div>
+      </div>
+
+      <aside class="hero-card hero-card--snapshot" aria-label="个人信息速览">
+        <div class="snapshot-header">
+          <span class="snapshot-kicker">PROFILE SNAPSHOT</span>
+          <strong>数字经济场景中的智能决策建模</strong>
+        </div>
+        <ul class="profile-meta profile-meta--dense">
           <li><strong>院校专业</strong>天津财经大学 · 数字经济（应用经济学 B+）</li>
+          <li><strong>专业排名</strong>3 / 76</li>
+          <li><strong>GPA</strong>3.79 / 4.0</li>
+          <li><strong>英语水平</strong>CET-4 549 · CET-6 474</li>
           <li><strong>政治面貌</strong>中共预备党员</li>
           <li><strong>联系电话</strong><a href="tel:13820867115">13820867115</a></li>
           <li><strong>电子邮箱</strong><a href="mailto:13820867115@163.com">13820867115@163.com</a></li>
           <li><strong>GitHub</strong><a href="https://github.com/lxj43/" target="_blank" rel="noopener noreferrer">github.com/lxj43</a></li>
         </ul>
-      </div>
+      </aside>
     </header>
 
     <main>
-      <section class="home-hub" aria-labelledby="home-hub-title">
-        <div class="section-head">
-          <h2 id="home-hub-title">站点导览</h2>
+      <section class="home-dashboard" aria-labelledby="dashboard-title">
+        <div class="section-head section-head--split">
+          <h2 id="dashboard-title">主页概览</h2>
+          <span class="section-note">把简历中的成绩、科研、竞赛与实践压缩成第一屏可读信息</span>
         </div>
-        <p class="section-intro">点击下方板块查看详细内容。</p>
-        <ul class="home-cards">
+        <div class="metric-grid metric-grid--home">
+          <article class="metric-card">
+            <span class="metric-card__num">3/76</span>
+            <span class="metric-card__label">专业排名</span>
+            <p>数字经济专业，课程成绩覆盖经济学、数学、金融数据与区块链方向。</p>
+          </article>
+          <article class="metric-card">
+            <span class="metric-card__num">3.79</span>
+            <span class="metric-card__label">GPA / 4.0</span>
+            <p>高等数学、线性代数、金融大数据、金融衍生工具等课程保持高分。</p>
+          </article>
+          <article class="metric-card">
+            <span class="metric-card__num">19</span>
+            <span class="metric-card__label">证书与成果展示</span>
+            <p>涵盖国家级竞赛、省部级奖项、大创立项/结项与软件著作权。</p>
+          </article>
+          <article class="metric-card">
+            <span class="metric-card__num">5</span>
+            <span class="metric-card__label">科研/项目主线</span>
+            <p>多智能体博弈学习、AI 与 ESG、惠 Python、智慧养老、知识图谱平台。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="home-map" aria-labelledby="map-title">
+        <div class="section-head section-head--split">
+          <h2 id="map-title">能力主线</h2>
+          <span class="section-note">从理论建模到场景落地的路径</span>
+        </div>
+        <div class="pathway-grid">
+          <article class="pathway-card">
+            <span class="pathway-card__index">01</span>
+            <h3>复杂主体关系抽象</h3>
+            <p>将企业、供应链、社区、老人、医院等多方关系抽象为博弈结构或复杂网络。</p>
+          </article>
+          <article class="pathway-card">
+            <span class="pathway-card__index">02</span>
+            <h3>多智能体协同推演</h3>
+            <p>围绕策略演化、均衡收敛、风险节点监控与推荐决策构建智能体协同系统。</p>
+          </article>
+          <article class="pathway-card">
+            <span class="pathway-card__index">03</span>
+            <h3>数据测度与实证建模</h3>
+            <p>基于企业行为数据、供应链关系和学习行为数据构建变量、测度方法与实证模型。</p>
+          </article>
+          <article class="pathway-card">
+            <span class="pathway-card__index">04</span>
+            <h3>平台化与场景应用</h3>
+            <p>把模型落到教育实训、居家养老、金融风险管理、图数据库可视化等真实场景。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="home-awards" aria-labelledby="home-awards-title">
+        <div class="section-head section-head--split">
+          <h2 id="home-awards-title">奖状循环带</h2>
+          <a class="section-link" href="competition.html">查看完整竞赛页 →</a>
+        </div>
+        <p class="section-intro">证书图片沿用 <code>images/awards/award-01.jpg</code> 等路径；未放入图片时自动显示占位卡片。</p>
+        <div id="home-award-marquee-root" class="award-marquee-root" aria-label="奖状循环播放"></div>
+      </section>
+
+      <section class="home-hub" aria-labelledby="home-hub-title">
+        <div class="section-head section-head--split">
+          <h2 id="home-hub-title">站点导览</h2>
+          <span class="section-note">四个子页面承接完整内容</span>
+        </div>
+        <ul class="home-cards home-cards--rich">
           <li>
             <a class="home-card" href="education.html">
+              <span class="home-card__visual" aria-hidden="true">EDU</span>
               <span class="home-card__icon" aria-hidden="true">EDU</span>
               <span class="home-card__title">教育背景</span>
-              <span class="home-card__desc">院校、成绩、课程与校内荣誉</span>
+              <span class="home-card__desc">院校、成绩、课程、语言能力与校内荣誉。</span>
             </a>
           </li>
           <li>
             <a class="home-card" href="research.html">
+              <span class="home-card__visual" aria-hidden="true">R&D</span>
               <span class="home-card__icon" aria-hidden="true">R&D</span>
               <span class="home-card__title">科研经历</span>
-              <span class="home-card__desc">论文、大创项目与软件著作权</span>
+              <span class="home-card__desc">论文、大创项目、软著与项目化能力展示。</span>
             </a>
           </li>
           <li>
             <a class="home-card" href="competition.html">
+              <span class="home-card__visual" aria-hidden="true">CMP</span>
               <span class="home-card__icon" aria-hidden="true">CMP</span>
               <span class="home-card__title">竞赛获奖</span>
-              <span class="home-card__desc">获奖总览、证书滚轮展示</span>
+              <span class="home-card__desc">Coverflow 式证书展示、奖项介绍与等级切换。</span>
             </a>
           </li>
           <li>
             <a class="home-card" href="other.html">
-              <span class="home-card__icon" aria-hidden="true">JOB</span>
+              <span class="home-card__visual" aria-hidden="true">EXP</span>
+              <span class="home-card__icon" aria-hidden="true">EXP</span>
               <span class="home-card__title">实习与其他经历</span>
-              <span class="home-card__desc">实习岗位与志愿服务</span>
+              <span class="home-card__desc">实习岗位、志愿服务与真实场景实践。</span>
             </a>
           </li>
         </ul>
@@ -79,6 +173,7 @@
   </div>
 
   <script src="js/site-nav.js"></script>
+  <script src="js/competition-carousel.js"></script>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>

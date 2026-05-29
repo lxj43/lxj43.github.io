@@ -15,48 +15,76 @@
 
   <nav class="site-nav" id="site-nav" aria-label="页面导览"></nav>
 
-  <div class="container">
-    <header class="profile">
+  <div class="container container--wide">
+    <header class="profile page-hero education-hero">
       <img class="avatar-img" src="images/avatar.jpg" alt="李学均证件照" width="120" height="150" />
       <div class="profile-main">
+        <p class="eyebrow">Academic Foundation</p>
         <h1>教育背景</h1>
-        <p class="tagline">天津财经大学数字经济专业学生，专注于博弈论与多智能体系统、数据分析与数学建模。</p>
+        <p class="tagline">天津财经大学数字经济专业学生，课程基础覆盖经济学、数学、金融数据分析与数字技术应用，支撑后续博弈论、多智能体系统与数学建模方向的研究实践。</p>
       </div>
     </header>
 
     <main>
-      <section id="education">
-        <div class="section-head">
-          <h2>教育背景</h2>
+      <section id="education" class="education-section education-showcase">
+        <div class="section-head section-head--split">
+          <h2>天津财经大学 · 数字经济</h2>
+          <span class="section-note">2023.09 — 至今 · 应用经济学 B+</span>
         </div>
-        <div class="edu-header">
-          <p class="school">天津财经大学 · 数字经济（应用经济学 B+）</p>
-          <p class="detail">2023.09 — 至今</p>
-        </div>
-        <div class="edu-stats">
-          <span>专业排名 3/76</span>
-          <span>GPA 3.79 / 4.0</span>
-          <span>CET-4 549</span>
-          <span>CET-6 474</span>
+
+        <div class="edu-hero-panel">
+          <div class="edu-main-title">
+            <span>专业学习表现</span>
+            <strong>排名 3 / 76</strong>
+            <p>围绕数字经济场景积累经济学分析、数理推导、金融数据处理与技术应用能力。</p>
+          </div>
+          <div class="edu-stats edu-stats--large edu-stats--hero">
+            <span><b>3/76</b>专业排名</span>
+            <span><b>3.79</b>GPA / 4.0</span>
+            <span><b>549</b>CET-4</span>
+            <span><b>474</b>CET-6</span>
+          </div>
         </div>
 
         <h3>主要课程与成绩</h3>
-        <ul class="course-grid">
-          <li>大数据管理方法与应用<span class="score">98</span></li>
-          <li>金融衍生工具<span class="score">97</span></li>
-          <li>证券投资学<span class="score">96</span></li>
-          <li>金融大数据分析与应用<span class="score">97</span></li>
+        <ul class="course-grid course-grid--expanded course-grid--grand">
+          <li>微观经济学<span class="score">96</span></li>
+          <li>宏观经济学<span class="score">97</span></li>
+          <li>高等数学 I<span class="score">95</span></li>
           <li>高等数学 II<span class="score">98</span></li>
           <li>线性代数<span class="score">97</span></li>
+          <li>大数据管理方法与应用<span class="score">98</span></li>
+          <li>区块链原理与技术<span class="score">97</span></li>
+          <li>金融大数据分析与应用<span class="score">97</span></li>
+          <li>金融衍生工具<span class="score">97</span></li>
+          <li>证券投资学<span class="score">96</span></li>
         </ul>
 
         <h3>校内荣誉</h3>
-        <ul class="honors-list">
-          <li>校优秀学生（2024—2025 学年）</li>
-          <li>校一等奖学金（2023—2024 学年）</li>
-          <li>校二等奖学金（2024—2025 学年）</li>
-          <li>院智汇精英荣誉称号（2024—2025 学年）</li>
+        <ul class="honors-list honors-list--cards honors-list--grand">
+          <li>校优秀学生<br><span>2024—2025 学年</span></li>
+          <li>校一等奖学金<br><span>2023—2024 学年</span></li>
+          <li>校二等奖学金<br><span>2024—2025 学年</span></li>
+          <li>院智汇精英荣誉称号<br><span>2024—2025 学年</span></li>
         </ul>
+        <div class="honor-gallery" aria-label="校内荣誉图片占位">
+          <figure class="honor-photo-card">
+            <div class="honor-photo-card__image"><img src="images/honors/honor-01.jpg" alt="校优秀学生荣誉图片" loading="lazy" onerror="this.parentElement.classList.add('is-missing'); this.remove();"></div>
+            <figcaption>校优秀学生</figcaption>
+          </figure>
+          <figure class="honor-photo-card">
+            <div class="honor-photo-card__image"><img src="images/honors/honor-02.jpg" alt="校一等奖学金荣誉图片" loading="lazy" onerror="this.parentElement.classList.add('is-missing'); this.remove();"></div>
+            <figcaption>校一等奖学金</figcaption>
+          </figure>
+          <figure class="honor-photo-card">
+            <div class="honor-photo-card__image"><img src="images/honors/honor-03.jpg" alt="校二等奖学金荣誉图片" loading="lazy" onerror="this.parentElement.classList.add('is-missing'); this.remove();"></div>
+            <figcaption>校二等奖学金</figcaption>
+          </figure>
+          <figure class="honor-photo-card">
+            <div class="honor-photo-card__image"><img src="images/honors/honor-04.jpg" alt="院智汇精英荣誉图片" loading="lazy" onerror="this.parentElement.classList.add('is-missing'); this.remove();"></div>
+            <figcaption>院智汇精英</figcaption>
+          </figure>
+        </div>
       </section>
     </main>
 

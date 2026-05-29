@@ -938,3 +938,2209 @@ footer .footer-doodle {
     scroll-behavior: auto !important;
   }
 }
+
+/* ===== 2026 前端美化更新：更充实的首页、Coverflow 竞赛页、板块式科研页 ===== */
+:root {
+  --paper: rgba(255, 253, 248, 0.94);
+  --paper-strong: #fffdf8;
+  --ink-line: rgba(47, 42, 36, 0.84);
+  --gold: #a78352;
+  --gold-soft: #f5eadb;
+  --panel-shadow: 6px 6px 0 rgba(210, 196, 175, 0.68), 0 16px 44px rgba(99, 82, 61, 0.1);
+}
+
+.bg-gradient {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -3;
+  background:
+    radial-gradient(circle at 12% 26%, rgba(167, 131, 82, 0.12), transparent 26%),
+    radial-gradient(circle at 86% 16%, rgba(143, 129, 113, 0.12), transparent 24%),
+    radial-gradient(circle at 52% 88%, rgba(255, 255, 255, 0.92), transparent 24%);
+}
+
+.container {
+  max-width: 1080px;
+}
+
+.container--wide {
+  max-width: 1120px;
+}
+
+.page-hero {
+  grid-template-columns: auto 1fr;
+  align-items: center;
+}
+
+.page-hero--compact {
+  margin-bottom: 1.1rem;
+}
+
+.section-head--split {
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.section-note,
+.section-link {
+  color: var(--muted);
+  font-size: 0.82rem;
+  text-decoration: none;
+}
+
+.section-link {
+  border-bottom: 1px dashed currentColor;
+}
+
+.section-intro code {
+  color: var(--math);
+  background: var(--accent-soft);
+  border-radius: 5px;
+  padding: 0.08rem 0.28rem;
+  font-size: 0.78rem;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.55rem;
+  color: var(--math);
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-family: "Courier New", monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 18px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 999px;
+}
+
+/* 首页：首屏信息更饱满 */
+.home-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(320px, 0.85fr);
+  gap: 1.15rem;
+  align-items: stretch;
+  margin-bottom: 1.25rem;
+}
+
+.hero-card {
+  position: relative;
+  overflow: hidden;
+  background: var(--paper);
+  border: 1.8px solid var(--ink-line);
+  border-radius: 18px;
+  box-shadow: var(--panel-shadow);
+  backdrop-filter: blur(9px);
+}
+
+.hero-card--profile {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.4rem;
+  min-height: 320px;
+  padding: 1.55rem;
+  align-items: center;
+}
+
+.hero-card--profile::after {
+  content: "minimax · nash · graph · agent";
+  position: absolute;
+  right: 1rem;
+  bottom: 0.72rem;
+  color: rgba(154, 133, 103, 0.16);
+  font-family: "Courier New", monospace;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  pointer-events: none;
+}
+
+.avatar-wrap--home {
+  grid-row: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  align-items: center;
+}
+
+.avatar-wrap--home .avatar-img {
+  width: 148px;
+  height: 185px;
+  border-radius: 16px;
+  box-shadow: 4px 4px 0 rgba(210, 196, 175, 0.72);
+}
+
+.avatar-badge {
+  display: inline-flex;
+  color: var(--math);
+  background: var(--math-soft);
+  border: 1.5px dashed var(--border-sketch);
+  border-radius: 999px;
+  padding: 0.25rem 0.62rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-family: "Courier New", monospace;
+  white-space: nowrap;
+}
+
+.profile-main--home h1 {
+  font-size: clamp(2.2rem, 6vw, 4.3rem);
+  line-height: 1.02;
+  margin-bottom: 0.85rem;
+}
+
+.tagline--home {
+  font-size: 1rem;
+  line-height: 1.85;
+  max-width: 680px;
+  background: rgba(251, 247, 239, 0.7);
+  border-left-width: 4px;
+  border-radius: 0 12px 12px 0;
+  padding: 0.8rem 0.95rem;
+}
+
+.profile-tags--hero {
+  margin-top: 1rem;
+}
+
+.profile-tags--hero li {
+  background: #fffdf8;
+  border-style: solid;
+  box-shadow: 2px 2px 0 rgba(210, 196, 175, 0.45);
+}
+
+.hero-card--snapshot {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 320px;
+}
+
+.snapshot-header {
+  padding-bottom: 0.9rem;
+  margin-bottom: 0.9rem;
+  border-bottom: 2px dashed var(--border);
+}
+
+.snapshot-kicker {
+  display: block;
+  color: var(--math);
+  font-family: "Courier New", monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.35rem;
+}
+
+.snapshot-header strong {
+  display: block;
+  font-size: 1.15rem;
+  line-height: 1.45;
+}
+
+.profile-meta--dense {
+  display: grid;
+  gap: 0.32rem;
+}
+
+.profile-meta--dense li {
+  padding: 0.28rem 0;
+  border-bottom: 1px dashed rgba(221, 208, 189, 0.78);
+}
+
+.profile-meta--dense li:last-child {
+  border-bottom: 0;
+}
+
+.home-dashboard,
+.home-map,
+.home-awards {
+  margin-bottom: 1.25rem;
+}
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.metric-card {
+  min-height: 172px;
+  padding: 1rem;
+  background: rgba(251, 247, 239, 0.86);
+  border: 1.8px solid var(--ink-line);
+  border-radius: 14px;
+  box-shadow: 3px 3px 0 rgba(210, 196, 175, 0.55);
+}
+
+.metric-card__num {
+  display: block;
+  color: var(--math);
+  font-size: clamp(1.75rem, 4vw, 2.7rem);
+  font-family: "Courier New", monospace;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+
+.metric-card__label {
+  display: block;
+  color: var(--text);
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin-bottom: 0.45rem;
+}
+
+.metric-card p {
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.62;
+}
+
+.pathway-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.pathway-card {
+  position: relative;
+  min-height: 185px;
+  padding: 1rem;
+  background: linear-gradient(145deg, rgba(255, 253, 248, 0.96), rgba(245, 234, 219, 0.75));
+  border: 1.8px solid var(--ink-line);
+  border-radius: 14px;
+  box-shadow: 3px 3px 0 rgba(210, 196, 175, 0.55);
+  overflow: hidden;
+}
+
+.pathway-card::after {
+  content: "";
+  position: absolute;
+  right: -18px;
+  bottom: -18px;
+  width: 92px;
+  height: 92px;
+  border: 2px dashed rgba(154, 133, 103, 0.35);
+  border-radius: 50%;
+}
+
+.pathway-card__index {
+  color: var(--math);
+  font-family: "Courier New", monospace;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.pathway-card h3 {
+  margin: 0.55rem 0 0.45rem;
+  color: var(--text);
+  font-size: 0.98rem;
+}
+
+.pathway-card h3::before {
+  display: none;
+}
+
+.pathway-card p {
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.65;
+}
+
+.home-cards--rich {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.home-cards--rich .home-card {
+  min-height: 150px;
+}
+
+/* 首页奖状横向循环带 */
+.award-marquee-root {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1.8px solid var(--ink-line);
+  background: rgba(255, 253, 248, 0.72);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+.award-marquee-root::before,
+.award-marquee-root::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 78px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.award-marquee-root::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--bg-warm), transparent);
+}
+
+.award-marquee-root::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--bg-warm), transparent);
+}
+
+.award-marquee {
+  overflow: hidden;
+  padding: 0.9rem 0;
+}
+
+.award-marquee__track {
+  display: flex;
+  gap: 0.8rem;
+  width: max-content;
+  animation: awardMarquee 48s linear infinite;
+}
+
+.award-marquee-root:hover .award-marquee__track {
+  animation-play-state: paused;
+}
+
+.award-mini-card {
+  display: grid;
+  grid-template-columns: 82px 220px;
+  gap: 0.75rem;
+  align-items: center;
+  width: 322px;
+  min-height: 122px;
+  padding: 0.75rem;
+  background: rgba(251, 247, 239, 0.92);
+  border: 1.5px dashed var(--border-sketch);
+  border-radius: 13px;
+}
+
+.award-mini-card__body span {
+  display: block;
+  color: var(--math);
+  font-size: 0.74rem;
+  font-weight: 700;
+  margin-bottom: 0.28rem;
+}
+
+.award-mini-card__body strong {
+  display: block;
+  color: var(--text);
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+@keyframes awardMarquee {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+/* 竞赛页：Coverflow 式证书阵列 */
+.competition-section {
+  overflow: hidden;
+}
+
+.award-overview {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.award-showcase {
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(320px, 0.82fr);
+  gap: 1.1rem;
+  align-items: stretch;
+  margin-top: 1rem;
+}
+
+.award-coverflow {
+  position: relative;
+  min-height: 430px;
+  overflow: hidden;
+  border: 1.8px solid var(--ink-line);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 40% 35%, rgba(255, 253, 248, 0.98), transparent 34%),
+    linear-gradient(145deg, rgba(245, 234, 220, 0.68), rgba(255, 253, 248, 0.86));
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.66), 4px 4px 0 rgba(210, 196, 175, 0.55);
+  perspective: 1100px;
+}
+
+.award-coverflow::before {
+  content: "CERTIFICATE STACK";
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  color: rgba(154, 133, 103, 0.32);
+  font-family: "Courier New", monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.award-coverflow__rail {
+  position: absolute;
+  inset: 0;
+}
+
+.award-cover-card {
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  width: 205px;
+  height: 294px;
+  padding: 0.55rem;
+  border: 1.8px solid rgba(47, 42, 36, 0.86);
+  border-radius: 16px;
+  background: var(--paper-strong);
+  box-shadow: 8px 8px 0 rgba(210, 196, 175, 0.55), 0 20px 42px rgba(75, 61, 45, 0.18);
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform:
+    translate(-50%, -50%)
+    translateX(calc(var(--offset) * 82px))
+    translateY(calc(var(--abs-offset) * 6px))
+    rotateY(calc(var(--offset) * -18deg))
+    rotateZ(calc(var(--offset) * -2.5deg))
+    scale(var(--scale));
+  transition: transform 0.5s cubic-bezier(0.2, 0.85, 0.25, 1), opacity 0.35s ease, filter 0.35s ease;
+  transform-style: preserve-3d;
+  font-family: inherit;
+  text-align: left;
+  z-index: var(--z);
+}
+
+.award-cover-card.is-visible {
+  opacity: 0.68;
+  pointer-events: auto;
+}
+
+.award-cover-card.is-active {
+  opacity: 1;
+  z-index: 30;
+  filter: none;
+}
+
+.award-cover-card:not(.is-active) {
+  filter: saturate(0.82) contrast(0.94);
+}
+
+.award-cover-card:hover,
+.award-cover-card:focus-visible {
+  outline: none;
+  opacity: 1;
+  filter: none;
+}
+
+.award-cover-card__level,
+.award-cover-card__id {
+  position: absolute;
+  z-index: 2;
+  background: var(--accent);
+  color: #fffdf8;
+  border: 1.3px solid var(--text);
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.15rem 0.46rem;
+}
+
+.award-cover-card__level {
+  top: 0.55rem;
+  left: 0.55rem;
+}
+
+.award-cover-card__id {
+  right: 0.55rem;
+  bottom: 0.55rem;
+  font-family: "Courier New", monospace;
+}
+
+.cert-frame--cover {
+  width: 100%;
+  height: 100%;
+  border-style: solid;
+  border-color: rgba(196, 179, 155, 0.86);
+  border-radius: 12px;
+}
+
+.cert-frame--mini {
+  width: 82px;
+  height: 104px;
+  flex-shrink: 0;
+}
+
+.award-detail {
+  min-height: 430px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.5rem;
+  border: 1.8px solid var(--ink-line);
+  border-radius: 18px;
+  background: var(--paper);
+  box-shadow: 4px 4px 0 rgba(210, 196, 175, 0.55);
+}
+
+.award-detail__level {
+  align-self: flex-start;
+  color: #fffdf8;
+  background: var(--accent);
+  border: 1.5px solid var(--text);
+  border-radius: 8px;
+  padding: 0.22rem 0.62rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 0.85rem;
+}
+
+.award-detail__name {
+  color: var(--text);
+  font-size: clamp(1.15rem, 3vw, 1.65rem);
+  line-height: 1.45;
+  margin: 0 0 1rem;
+}
+
+.award-detail__name::before {
+  display: none;
+}
+
+.award-detail__intro {
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.8;
+  margin-bottom: 1.05rem;
+}
+
+.award-detail__tags,
+.project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.award-detail__tags span,
+.project-meta span {
+  color: var(--math);
+  background: var(--math-soft);
+  border: 1.3px dashed var(--border-sketch);
+  border-radius: 999px;
+  padding: 0.22rem 0.55rem;
+  font-size: 0.76rem;
+  font-weight: 600;
+}
+
+.award-detail__meta {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  color: var(--muted);
+  margin: 1.35rem 0 1rem;
+  font-family: "Courier New", monospace;
+}
+
+.award-detail__current {
+  color: var(--math);
+  font-size: 2.1rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.award-detail__controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* 科研页：导览 + 项目详情 */
+.research-overview-section {
+  margin-bottom: 1.15rem;
+}
+
+.research-nav-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.research-nav-card {
+  display: flex;
+  min-height: 160px;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.95rem;
+  color: var(--text);
+  text-decoration: none;
+  background: rgba(251, 247, 239, 0.88);
+  border: 1.8px solid var(--ink-line);
+  border-radius: 14px;
+  box-shadow: 3px 3px 0 rgba(210, 196, 175, 0.55);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.research-nav-card:hover,
+.research-nav-card:focus-visible {
+  transform: translateY(-2px);
+  background: var(--paper-strong);
+  box-shadow: 5px 5px 0 rgba(210, 196, 175, 0.65);
+}
+
+.research-nav-card span {
+  color: var(--math);
+  font-family: "Courier New", monospace;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.research-nav-card strong {
+  display: block;
+  font-size: 0.92rem;
+  line-height: 1.48;
+}
+
+.research-nav-card em {
+  color: var(--muted);
+  font-style: normal;
+  font-size: 0.76rem;
+}
+
+.project-panel {
+  scroll-margin-top: calc(var(--nav-h) + 1rem);
+  overflow: hidden;
+}
+
+.project-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 6px;
+  background: linear-gradient(var(--math), transparent);
+  opacity: 0.42;
+}
+
+.project-panel__head {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px dashed var(--border);
+}
+
+.project-panel__head h2 {
+  font-size: clamp(1.12rem, 2.5vw, 1.6rem);
+  line-height: 1.45;
+  max-width: 760px;
+}
+
+.project-badge {
+  flex-shrink: 0;
+  color: #fffdf8;
+  background: var(--accent);
+  border: 1.5px solid var(--text);
+  border-radius: 999px;
+  padding: 0.28rem 0.72rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.project-layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.95rem;
+  margin: 1rem 0;
+}
+
+.project-layout article {
+  padding: 1rem;
+  background: rgba(251, 247, 239, 0.78);
+  border: 1.5px dashed var(--border-sketch);
+  border-radius: 13px;
+}
+
+.project-layout h3 {
+  margin-top: 0;
+  color: var(--text);
+}
+
+.project-layout p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.78;
+}
+
+.method-strip {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  padding: 0.8rem;
+  border: 1.5px solid rgba(47, 42, 36, 0.72);
+  border-radius: 13px;
+  background: linear-gradient(90deg, rgba(245, 234, 220, 0.82), rgba(255, 253, 248, 0.88));
+}
+
+.method-strip span {
+  color: var(--math);
+  font-size: 0.8rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.method-strip i {
+  width: 26px;
+  height: 1.5px;
+  background: var(--border-sketch);
+  border-radius: 999px;
+}
+
+.project-placeholder {
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  color: var(--muted);
+  font-size: 0.86rem;
+  background: rgba(241, 232, 220, 0.64);
+  border-left: 4px solid var(--math);
+  border-radius: 0 12px 12px 0;
+}
+
+.project-placeholder strong {
+  color: var(--text);
+}
+
+/* 其他页面卡片化 */
+.edu-stats--large span {
+  box-shadow: 2px 2px 0 rgba(210, 196, 175, 0.45);
+}
+
+.course-grid--expanded {
+  grid-template-columns: repeat(auto-fit, minmax(176px, 1fr));
+}
+
+.honors-list--cards li,
+.other-list--cards > li {
+  box-shadow: 2px 2px 0 rgba(210, 196, 175, 0.45);
+}
+
+.other-list--cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.other-list--cards > li {
+  padding: 1rem;
+  border: 1.5px dashed var(--border-sketch);
+  border-radius: 13px;
+  background: rgba(251, 247, 239, 0.78);
+}
+
+.other-list--cards > li:last-child {
+  padding-bottom: 1rem;
+}
+
+
+@media (max-width: 980px) {
+  .home-hero,
+  .award-showcase {
+    grid-template-columns: 1fr;
+  }
+
+  .metric-grid,
+  .pathway-grid,
+  .home-cards--rich {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .research-nav-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .award-coverflow,
+  .award-detail {
+    min-height: 390px;
+  }
+}
+
+@media (max-width: 700px) {
+  .container,
+  .container--wide {
+    max-width: 100%;
+  }
+
+  .hero-card--profile,
+  .page-hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .tagline--home {
+    text-align: left;
+  }
+
+  .metric-grid,
+  .pathway-grid,
+  .home-cards--rich,
+  .research-nav-grid,
+  .project-layout,
+  .other-list--cards {
+    grid-template-columns: 1fr;
+  }
+
+  .project-panel__head {
+    flex-direction: column;
+  }
+
+  .award-coverflow {
+    min-height: 340px;
+  }
+
+  .award-cover-card {
+    width: 170px;
+    height: 246px;
+    transform:
+      translate(-50%, -50%)
+      translateX(calc(var(--offset) * 58px))
+      rotateY(calc(var(--offset) * -14deg))
+      rotateZ(calc(var(--offset) * -2deg));
+  }
+
+  .award-mini-card {
+    grid-template-columns: 72px 184px;
+    width: 276px;
+  }
+
+  .cert-frame--mini {
+    width: 72px;
+    height: 94px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .award-marquee__track {
+    animation: none !important;
+  }
+}
+
+/* ===== 2026-05 大气版修订：大块面、低圆角、滚轮式证书墙 ===== */
+:root {
+  --radius: 6px;
+  --shadow: 0 18px 44px rgba(77, 61, 43, 0.10);
+  --panel-shadow: 0 18px 46px rgba(77, 61, 43, 0.12);
+  --ink-line: rgba(47, 42, 36, 0.72);
+}
+
+body {
+  font-size: 16px;
+}
+
+.site-nav {
+  border-bottom: 1px solid rgba(196, 179, 155, 0.62);
+}
+
+.site-nav__link,
+.site-nav a,
+.site-nav__link.is-current,
+.site-nav__link[aria-current="page"],
+.site-nav a[aria-current="page"] {
+  border-radius: 4px;
+  box-shadow: none;
+}
+
+.container,
+.container--wide {
+  max-width: min(1380px, calc(100vw - 56px));
+  padding-top: calc(var(--nav-h) + 2.2rem);
+}
+
+section,
+header.profile,
+.hero-card,
+.metric-card,
+.pathway-card,
+a.home-card,
+.home-cards .home-card,
+.award-marquee-root,
+.award-mini-card,
+.award-stat,
+.award-coverflow,
+.award-cover-card,
+.award-detail,
+.research-nav-card,
+.project-layout article,
+.method-strip,
+.other-list--cards > li,
+.avatar-img {
+  border-radius: 6px !important;
+}
+
+section,
+header.profile,
+.hero-card,
+.metric-card,
+.pathway-card,
+a.home-card,
+.home-cards .home-card,
+.award-stat,
+.award-coverflow,
+.award-detail,
+.research-nav-card,
+.project-layout article,
+.other-list--cards > li {
+  border-width: 1px !important;
+  box-shadow: var(--panel-shadow) !important;
+}
+
+section {
+  padding: clamp(1.65rem, 2.1vw, 2.6rem);
+  margin-bottom: 1.6rem;
+}
+
+.section-head {
+  border-bottom: 1px solid rgba(196, 179, 155, 0.7);
+  margin-bottom: 1.35rem;
+  padding-bottom: 0.95rem;
+}
+
+section > h2,
+.section-head h2 {
+  font-size: clamp(1.25rem, 1.8vw, 1.75rem);
+  letter-spacing: 0.02em;
+}
+
+.section-note,
+.section-link,
+.section-intro {
+  font-size: 0.98rem;
+}
+
+.wheel-btn {
+  border-radius: 4px;
+  box-shadow: none;
+  padding: 0.72rem 1.15rem;
+  border-width: 1px;
+}
+
+/* 首页：提高内容密度，减少背景空旷感 */
+.home-hero {
+  min-height: calc(72vh - var(--nav-h));
+  grid-template-columns: minmax(0, 1.55fr) minmax(360px, 0.9fr);
+  gap: 1.45rem;
+  margin-bottom: 1.6rem;
+}
+
+.hero-card--profile,
+.hero-card--snapshot {
+  min-height: 100%;
+}
+
+.hero-card--profile {
+  padding: clamp(2rem, 3.2vw, 3.2rem);
+}
+
+.avatar-wrap--home .avatar-img {
+  width: clamp(150px, 13vw, 210px);
+  height: clamp(190px, 16vw, 260px);
+  border-radius: 4px !important;
+  box-shadow: none;
+}
+
+.profile-main--home h1 {
+  font-size: clamp(3.2rem, 8vw, 6.2rem);
+  letter-spacing: 0.04em;
+}
+
+.tagline--home {
+  max-width: 880px;
+  font-size: clamp(1.02rem, 1.32vw, 1.22rem);
+  line-height: 1.95;
+  border-radius: 0 !important;
+  background: rgba(255, 253, 248, 0.62);
+}
+
+.profile-tags--hero li,
+.avatar-badge,
+.metric-card,
+.pathway-card,
+.award-mini-card,
+.honors-list li,
+.edu-stats span,
+.award-detail__tags span,
+.project-meta span {
+  border-radius: 3px !important;
+}
+
+.hero-card--snapshot {
+  padding: clamp(1.6rem, 2.4vw, 2.35rem);
+}
+
+.snapshot-header strong {
+  font-size: clamp(1.35rem, 1.9vw, 1.85rem);
+}
+
+.profile-meta--dense {
+  gap: 0.48rem;
+}
+
+.profile-meta--dense li {
+  font-size: 0.98rem;
+  padding: 0.46rem 0;
+}
+
+.metric-grid,
+.pathway-grid,
+.home-cards--rich {
+  gap: 1.15rem;
+}
+
+.metric-card {
+  min-height: 220px;
+  padding: 1.35rem;
+}
+
+.metric-card__num {
+  font-size: clamp(2.35rem, 4.4vw, 4rem);
+}
+
+.metric-card__label {
+  font-size: 1.04rem;
+}
+
+.metric-card p,
+.pathway-card p {
+  font-size: 0.95rem;
+}
+
+.pathway-card {
+  min-height: 245px;
+  padding: 1.35rem;
+}
+
+.pathway-card::after {
+  border-radius: 0;
+  transform: rotate(12deg);
+}
+
+.pathway-card h3 {
+  font-size: 1.12rem;
+}
+
+.home-cards--rich .home-card {
+  min-height: 190px;
+  padding: 1.25rem;
+}
+
+.home-card__title {
+  font-size: 1.14rem;
+}
+
+.home-card__desc {
+  font-size: 0.94rem;
+}
+
+.home-awards {
+  min-height: 360px;
+}
+
+.award-marquee {
+  padding: 1.15rem 0;
+}
+
+.award-mini-card {
+  grid-template-columns: 112px 260px;
+  width: 410px;
+  min-height: 158px;
+  padding: 1rem;
+  border-style: solid;
+  box-shadow: none;
+}
+
+.cert-frame--mini {
+  width: 112px;
+  height: 136px;
+  border-radius: 3px !important;
+}
+
+.award-mini-card__body strong {
+  font-size: 0.98rem;
+}
+
+/* 竞赛页：整屏证书墙 + 鼠标滚轮切换 */
+.competition-section {
+  min-height: calc(100vh - var(--nav-h) - 5rem);
+}
+
+.competition-section .section-intro {
+  max-width: 980px;
+  margin-bottom: 1.2rem;
+}
+
+.award-overview {
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.award-stat {
+  padding: 1.15rem 0.8rem;
+}
+
+.award-stat__num {
+  font-size: clamp(2.1rem, 4vw, 3.4rem);
+}
+
+.award-showcase {
+  grid-template-columns: minmax(640px, 1.45fr) minmax(420px, 0.75fr);
+  gap: 1.45rem;
+  min-height: 610px;
+  margin-top: 1.15rem;
+}
+
+.award-coverflow {
+  min-height: 610px;
+  border: 0 !important;
+  background:
+    linear-gradient(90deg, rgba(47, 42, 36, 0.055) 1px, transparent 1px),
+    linear-gradient(rgba(47, 42, 36, 0.045) 1px, transparent 1px),
+    radial-gradient(circle at 46% 42%, rgba(255, 253, 248, 0.96), transparent 38%),
+    linear-gradient(135deg, rgba(244, 234, 220, 0.7), rgba(255, 253, 248, 0.9));
+  background-size: 32px 32px, 32px 32px, auto, auto;
+  box-shadow: inset 0 0 0 1px rgba(47, 42, 36, 0.18), 0 22px 55px rgba(77, 61, 43, 0.13) !important;
+  perspective: 1500px;
+}
+
+.award-coverflow::before {
+  display: none;
+}
+
+.award-coverflow__header {
+  position: absolute;
+  top: 1.15rem;
+  left: 1.25rem;
+  right: 1.25rem;
+  z-index: 70;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+  color: rgba(47, 42, 36, 0.42);
+  font-family: "Courier New", monospace;
+  letter-spacing: 0.08em;
+}
+
+.award-coverflow__header span {
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.award-coverflow__header strong {
+  font-size: 0.74rem;
+  color: var(--math);
+  border: 1px solid rgba(154, 133, 103, 0.35);
+  padding: 0.28rem 0.52rem;
+  background: rgba(255, 253, 248, 0.72);
+}
+
+.award-cover-card {
+  top: 53%;
+  width: clamp(220px, 18vw, 286px);
+  height: clamp(318px, 26vw, 410px);
+  padding: 0.62rem;
+  border: 1px solid rgba(47, 42, 36, 0.6) !important;
+  box-shadow: 0 26px 58px rgba(65, 49, 32, 0.22) !important;
+  transform:
+    translate(-50%, -50%)
+    translateX(calc(var(--offset) * clamp(82px, 7.2vw, 118px)))
+    translateY(calc(var(--abs-offset) * 10px))
+    rotateY(calc(var(--offset) * -20deg))
+    rotateZ(calc(var(--offset) * -1.4deg))
+    scale(var(--scale));
+}
+
+.award-cover-card.is-visible {
+  opacity: 0.58;
+}
+
+.award-cover-card.is-active {
+  opacity: 1;
+  transform:
+    translate(-50%, -50%)
+    translateX(calc(var(--offset) * clamp(82px, 7.2vw, 118px)))
+    translateY(-4px)
+    rotateY(0deg)
+    rotateZ(0deg)
+    scale(1.06);
+}
+
+.award-cover-card__level,
+.award-cover-card__id {
+  border-radius: 2px;
+  border: 0;
+  background: rgba(47, 42, 36, 0.86);
+  letter-spacing: 0.03em;
+}
+
+.cert-frame--cover {
+  border: 1px solid rgba(196, 179, 155, 0.52);
+  border-radius: 3px !important;
+}
+
+.award-wheel-hint {
+  position: absolute;
+  left: 50%;
+  bottom: 1.25rem;
+  transform: translateX(-50%);
+  z-index: 75;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: rgba(47, 42, 36, 0.72);
+  background: rgba(255, 253, 248, 0.78);
+  border: 1px solid rgba(47, 42, 36, 0.22);
+  padding: 0.55rem 0.82rem;
+  font-size: 0.86rem;
+  backdrop-filter: blur(8px);
+  pointer-events: none;
+}
+
+.award-wheel-hint strong {
+  color: var(--math);
+}
+
+.award-coverflow.is-wheel-ready .award-wheel-hint {
+  background: rgba(245, 234, 219, 0.92);
+  border-color: rgba(154, 133, 103, 0.55);
+}
+
+.award-detail {
+  min-height: 610px;
+  padding: clamp(2rem, 3vw, 3rem);
+  border: 0 !important;
+  box-shadow: inset 0 0 0 1px rgba(47, 42, 36, 0.18), 0 22px 55px rgba(77, 61, 43, 0.13) !important;
+  justify-content: space-between;
+}
+
+.award-detail__topline {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.award-detail__tier {
+  color: var(--muted);
+  font-size: 0.86rem;
+  white-space: nowrap;
+}
+
+.award-detail__level {
+  border: 0;
+  border-radius: 2px;
+  padding: 0.36rem 0.78rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+}
+
+.award-detail__name {
+  font-size: clamp(1.75rem, 3.4vw, 3rem);
+  line-height: 1.25;
+  margin: 1.1rem 0 1.35rem;
+}
+
+.award-detail__intro {
+  font-size: clamp(1.02rem, 1.3vw, 1.18rem);
+  line-height: 1.95;
+  color: #625647;
+  margin-bottom: 1.35rem;
+}
+
+.award-detail__tags span,
+.project-meta span {
+  border-style: solid;
+  border-width: 1px;
+  font-size: 0.88rem;
+  padding: 0.34rem 0.68rem;
+}
+
+.award-detail__footer {
+  margin-top: auto;
+}
+
+.award-detail__meta {
+  margin: 2rem 0 0.7rem;
+}
+
+.award-detail__current {
+  font-size: clamp(3.4rem, 7vw, 5.4rem);
+}
+
+.award-progress {
+  height: 6px;
+  background: rgba(196, 179, 155, 0.35);
+  overflow: hidden;
+  margin-bottom: 1.4rem;
+}
+
+.award-progress i {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: var(--math);
+  transition: width 0.35s ease;
+}
+
+.award-detail__controls {
+  gap: 0.9rem;
+}
+
+.award-detail__controls .wheel-btn {
+  min-width: 128px;
+  justify-content: center;
+}
+
+/* 科研页与其他子页也改为更大块面 */
+.research-nav-card {
+  min-height: 205px;
+  padding: 1.25rem;
+}
+
+.research-nav-card strong {
+  font-size: 1.04rem;
+}
+
+.project-panel {
+  padding: clamp(1.8rem, 2.8vw, 3rem);
+}
+
+.project-panel__head h2 {
+  font-size: clamp(1.45rem, 2.4vw, 2.25rem);
+}
+
+.project-layout article {
+  padding: 1.35rem;
+}
+
+.project-layout p {
+  font-size: 0.98rem;
+}
+
+@media (max-width: 1100px) {
+  .container,
+  .container--wide {
+    max-width: min(100%, calc(100vw - 28px));
+  }
+  .award-showcase {
+    grid-template-columns: 1fr;
+  }
+  .award-coverflow,
+  .award-detail {
+    min-height: 520px;
+  }
+}
+
+@media (max-width: 760px) {
+  .home-hero {
+    min-height: auto;
+  }
+  .award-showcase {
+    min-height: auto;
+  }
+  .award-coverflow {
+    min-height: 440px;
+  }
+  .award-cover-card {
+    width: 176px;
+    height: 254px;
+    transform:
+      translate(-50%, -50%)
+      translateX(calc(var(--offset) * 58px))
+      translateY(calc(var(--abs-offset) * 8px))
+      rotateY(calc(var(--offset) * -16deg))
+      rotateZ(calc(var(--offset) * -1deg))
+      scale(var(--scale));
+  }
+  .award-cover-card.is-active {
+    transform: translate(-50%, -50%) translateY(-4px) scale(1.04);
+  }
+  .award-wheel-hint {
+    width: calc(100% - 2rem);
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  .award-detail {
+    min-height: auto;
+  }
+}
+
+
+/* ===== 2026-05 bugfix: right aligned nav, grander layout, stacked awards, education/experience expansion ===== */
+:root {
+  --radius: 8px;
+  --nav-h: 3.85rem;
+  --grand-max: 1240px;
+}
+
+.site-nav {
+  justify-content: flex-end !important;
+  padding: 0.72rem clamp(1rem, 4vw, 3.5rem) 0.72rem 1rem !important;
+  gap: 0.55rem !important;
+  border-bottom: 1px solid rgba(221, 208, 189, 0.8) !important;
+}
+
+.site-nav__link,
+.site-nav a {
+  font-size: clamp(0.92rem, 1.25vw, 1.08rem) !important;
+  padding: 0.42rem 0.9rem !important;
+  border-radius: 6px !important;
+}
+
+.container,
+.container--wide {
+  max-width: var(--grand-max) !important;
+  padding-left: clamp(1rem, 3vw, 2rem) !important;
+  padding-right: clamp(1rem, 3vw, 2rem) !important;
+}
+
+section,
+.hero-card,
+header.profile,
+a.home-card,
+.home-cards .home-card,
+.metric-card,
+.pathway-card,
+.research-nav-card,
+.project-detail-card,
+.experience-nav-card,
+.experience-detail-card,
+.award-stat,
+.award-coverflow,
+.award-detail,
+.award-mini-card,
+.honor-photo-card {
+  border-radius: 8px !important;
+}
+
+section {
+  padding: clamp(1.6rem, 3vw, 2.4rem) !important;
+}
+
+.section-head {
+  margin-bottom: clamp(1.05rem, 2vw, 1.55rem) !important;
+}
+
+.section-head h2,
+section > h2 {
+  font-size: clamp(1.35rem, 2.4vw, 2rem) !important;
+  letter-spacing: 0.02em;
+}
+
+.section-note,
+.section-link {
+  font-size: clamp(0.9rem, 1.2vw, 1.02rem) !important;
+}
+
+/* 首页站点导览：横向等距 + 图片/图形占位 */
+.home-cards--rich {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: clamp(0.9rem, 1.6vw, 1.25rem) !important;
+}
+
+.home-cards--rich .home-card {
+  min-height: 245px !important;
+  padding: 1.15rem !important;
+  justify-content: flex-start;
+  gap: 0.72rem !important;
+  border-width: 1px !important;
+  box-shadow: 0 14px 34px rgba(99, 82, 61, 0.1) !important;
+}
+
+.home-card__visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 108px;
+  width: 100%;
+  color: rgba(154, 133, 103, 0.9);
+  background:
+    linear-gradient(135deg, rgba(255, 253, 248, 0.95), rgba(245, 234, 219, 0.8)),
+    repeating-linear-gradient(45deg, rgba(154, 133, 103, 0.08) 0 8px, transparent 8px 16px);
+  border: 1px solid rgba(196, 179, 155, 0.85);
+  border-radius: 6px;
+  font-size: 1.45rem;
+  font-family: "Courier New", monospace;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.home-cards--rich .home-card__icon {
+  display: none;
+}
+
+.home-cards--rich .home-card__title {
+  font-size: clamp(1.12rem, 1.55vw, 1.35rem) !important;
+}
+
+.home-cards--rich .home-card__desc {
+  font-size: clamp(0.92rem, 1.15vw, 1.02rem) !important;
+  line-height: 1.7 !important;
+}
+
+/* 教育页：大版面、大学习指标、大课程卡片 */
+.education-hero .profile-main h1 {
+  font-size: clamp(2.4rem, 5vw, 4.2rem) !important;
+}
+
+.education-hero .tagline {
+  font-size: clamp(1.04rem, 1.55vw, 1.25rem) !important;
+  line-height: 1.9 !important;
+  max-width: 900px;
+}
+
+.education-section {
+  min-height: calc(100vh - var(--nav-h) - 4rem);
+}
+
+.edu-hero-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 0.86fr) minmax(520px, 1.14fr);
+  gap: clamp(1rem, 2vw, 1.5rem);
+  align-items: stretch;
+  margin-bottom: clamp(1.5rem, 2.6vw, 2.25rem);
+}
+
+.edu-main-title {
+  min-height: 260px;
+  padding: clamp(1.35rem, 2.6vw, 2.2rem);
+  background: linear-gradient(135deg, rgba(255,253,248,0.98), rgba(245,234,219,0.9));
+  border-left: 6px solid var(--math);
+  box-shadow: inset 0 0 0 1px rgba(196,179,155,0.45);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.edu-main-title span {
+  color: var(--math);
+  font-size: clamp(0.92rem, 1.2vw, 1.05rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.edu-main-title strong {
+  display: block;
+  margin: 0.32rem 0 0.65rem;
+  color: var(--text);
+  font-size: clamp(2.4rem, 5.5vw, 5.2rem);
+  line-height: 1;
+}
+
+.edu-main-title p {
+  color: var(--muted);
+  font-size: clamp(1rem, 1.35vw, 1.16rem);
+  line-height: 1.85;
+}
+
+.edu-stats--hero {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem !important;
+  margin: 0 !important;
+}
+
+.edu-stats--hero span {
+  min-height: 124px;
+  display: flex !important;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 1.1rem 1.25rem !important;
+  background: rgba(255,253,248,0.92) !important;
+  border: 1px solid rgba(47,42,36,0.72) !important;
+  border-radius: 6px !important;
+  font-size: clamp(0.95rem, 1.2vw, 1.08rem) !important;
+  color: var(--muted) !important;
+}
+
+.edu-stats--hero b {
+  display: block;
+  color: var(--math);
+  font-family: "Courier New", monospace;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+
+.education-section h3 {
+  font-size: clamp(1.28rem, 2vw, 1.75rem) !important;
+  margin: 2rem 0 1.05rem !important;
+}
+
+.education-section h3::before {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+}
+
+.course-grid--grand {
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  gap: clamp(0.75rem, 1.4vw, 1.05rem) !important;
+}
+
+.course-grid--grand li {
+  min-height: 142px;
+  padding: 1rem 1.05rem !important;
+  border: 1px solid rgba(196, 179, 155, 0.92) !important;
+  border-radius: 6px !important;
+  background: rgba(255,253,248,0.9) !important;
+  color: var(--text) !important;
+  font-size: clamp(0.98rem, 1.22vw, 1.12rem) !important;
+  line-height: 1.55 !important;
+}
+
+.course-grid--grand .score {
+  font-size: clamp(1.85rem, 3vw, 2.65rem) !important;
+  margin-top: 0.55rem !important;
+}
+
+.honors-list--grand {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.9rem !important;
+  margin-bottom: 1rem;
+}
+
+.honors-list--grand li {
+  min-height: 112px;
+  padding: 1rem !important;
+  border: 1px solid rgba(47,42,36,0.68) !important;
+  border-radius: 6px !important;
+  font-size: clamp(1rem, 1.3vw, 1.18rem) !important;
+  font-weight: 700;
+  background: rgba(245,234,219,0.72) !important;
+}
+
+.honors-list--grand li span {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.honor-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.9rem;
+  align-items: stretch;
+}
+
+.honor-photo-card {
+  margin: 0;
+  min-height: 230px;
+  padding: 0.75rem;
+  background: rgba(255,253,248,0.92);
+  border: 1px solid rgba(196, 179, 155, 0.92);
+  box-shadow: 0 12px 28px rgba(99,82,61,0.08);
+}
+
+.honor-photo-card__image {
+  position: relative;
+  height: 172px;
+  background:
+    linear-gradient(135deg, rgba(255,253,248,0.98), rgba(245,234,219,0.8)),
+    repeating-linear-gradient(-45deg, rgba(154,133,103,0.09) 0 8px, transparent 8px 16px);
+  border: 1px solid rgba(196,179,155,0.78);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.honor-photo-card__image::before,
+.experience-image-card::before {
+  content: "IMAGE";
+  color: rgba(154,133,103,0.5);
+  font-family: "Courier New", monospace;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.honor-photo-card__image img,
+.experience-image-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.honor-photo-card figcaption {
+  margin-top: 0.65rem;
+  color: var(--text);
+  font-size: 0.98rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* 竞赛页：上介绍、下证书墙；当前奖项放大，其他奖项虚化 */
+.competition-section {
+  min-height: calc(100vh - var(--nav-h) - 4rem);
+}
+
+.competition-section .section-intro {
+  font-size: clamp(0.98rem, 1.25vw, 1.1rem) !important;
+}
+
+.award-overview {
+  gap: 1rem !important;
+  margin-bottom: 1.1rem !important;
+}
+
+.award-stat {
+  min-height: 132px;
+  padding: 1rem !important;
+  border-width: 1px !important;
+  box-shadow: 0 12px 30px rgba(99,82,61,0.08) !important;
+}
+
+.award-stat__num {
+  font-size: clamp(2.2rem, 4vw, 3.6rem) !important;
+}
+
+.award-stat__label {
+  font-size: clamp(0.95rem, 1.2vw, 1.08rem) !important;
+}
+
+.award-showcase,
+.award-showcase--stacked {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 1rem !important;
+  margin-top: 1rem !important;
+}
+
+.award-detail--top,
+.award-detail {
+  min-height: 228px !important;
+  height: 228px !important;
+  padding: 1.15rem 1.35rem !important;
+  display: flex !important;
+  justify-content: flex-start !important;
+  overflow: hidden;
+  border: 1px solid rgba(47,42,36,0.68) !important;
+  box-shadow: 0 12px 30px rgba(99,82,61,0.08) !important;
+}
+
+.award-detail__topline,
+.award-detail__bottomrow,
+.award-detail__mainrow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.award-detail__topline .eyebrow {
+  margin-bottom: 0;
+}
+
+.award-detail__tier {
+  color: var(--muted);
+  font-size: 0.94rem;
+  font-weight: 700;
+}
+
+.award-detail__mainrow {
+  justify-content: flex-start;
+  margin: 0.55rem 0 0.5rem;
+}
+
+.award-detail__level {
+  flex: 0 0 auto;
+  margin: 0 !important;
+  border-radius: 4px !important;
+  font-size: 0.86rem !important;
+}
+
+.award-detail__name {
+  margin: 0 !important;
+  font-size: clamp(1.08rem, 2.25vw, 1.58rem) !important;
+  line-height: 1.35 !important;
+}
+
+.award-detail__intro {
+  max-width: 980px;
+  margin: 0 0 0.65rem !important;
+  font-size: clamp(0.94rem, 1.2vw, 1.05rem) !important;
+  line-height: 1.68 !important;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.award-detail__tags {
+  max-width: 78%;
+}
+
+.award-detail__tags span {
+  border-radius: 4px !important;
+  border-style: solid !important;
+  font-size: 0.82rem !important;
+}
+
+.award-detail__meta {
+  margin: 0 !important;
+  flex: 0 0 auto;
+}
+
+.award-detail__current {
+  font-size: 2rem !important;
+}
+
+.award-progress {
+  margin-top: 0.65rem;
+  height: 3px;
+  background: rgba(196,179,155,0.36);
+  overflow: hidden;
+}
+
+.award-progress i {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--math);
+  transition: width 0.35s ease;
+}
+
+.award-coverflow--wide,
+.award-coverflow {
+  min-height: clamp(470px, 48vh, 620px) !important;
+  border: 0 !important;
+  border-radius: 8px !important;
+  background:
+    linear-gradient(90deg, rgba(251,247,239,0.88), rgba(255,253,248,0.72), rgba(251,247,239,0.88)),
+    repeating-linear-gradient(90deg, rgba(154,133,103,0.1) 0 1px, transparent 1px 56px) !important;
+  box-shadow: inset 0 0 0 1px rgba(196,179,155,0.48), 0 18px 48px rgba(99,82,61,0.1) !important;
+  overflow: hidden;
+}
+
+.award-coverflow__header {
+  position: absolute;
+  top: 1rem;
+  left: 1.25rem;
+  z-index: 140;
+}
+
+.award-coverflow__rail {
+  position: absolute;
+  inset: 0;
+}
+
+.award-cover-card {
+  top: 55% !important;
+  width: clamp(185px, 18vw, 245px) !important;
+  height: clamp(270px, 28vw, 355px) !important;
+  border: 1px solid rgba(47,42,36,0.72) !important;
+  border-radius: 5px !important;
+  padding: 0.45rem !important;
+  box-shadow: 0 22px 46px rgba(75,61,45,0.16) !important;
+  transform:
+    translate(-50%, -50%)
+    translateX(calc(var(--offset) * clamp(92px, 10vw, 138px)))
+    translateY(calc(var(--abs-offset) * 8px))
+    rotateY(calc(var(--offset) * -13deg))
+    rotateZ(calc(var(--offset) * -1.8deg))
+    scale(var(--scale)) !important;
+}
+
+.award-cover-card.is-visible {
+  opacity: 0.24 !important;
+  pointer-events: auto;
+  filter: blur(1.2px) grayscale(0.32) saturate(0.72) contrast(0.9) !important;
+}
+
+.award-cover-card.is-near {
+  opacity: 0.42 !important;
+  filter: blur(0.6px) grayscale(0.18) saturate(0.82) contrast(0.94) !important;
+}
+
+.award-cover-card.is-active {
+  opacity: 1 !important;
+  z-index: 160 !important;
+  filter: none !important;
+  box-shadow: 0 28px 70px rgba(75,61,45,0.28), 0 0 0 1px rgba(47,42,36,0.82) !important;
+}
+
+.award-cover-card:not(.is-active):hover,
+.award-cover-card:not(.is-active):focus-visible {
+  opacity: 0.7 !important;
+  filter: blur(0) grayscale(0.05) !important;
+}
+
+.award-cover-card__level,
+.award-cover-card__id {
+  border-radius: 3px !important;
+  font-size: 0.68rem !important;
+}
+
+.cert-frame--cover {
+  border-radius: 3px !important;
+  border-width: 1px !important;
+}
+
+.award-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 180;
+  width: 58px;
+  height: 92px;
+  transform: translateY(-50%);
+  border: 0;
+  background: rgba(255,253,248,0.52);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.award-arrow:hover,
+.award-arrow:focus-visible {
+  background: rgba(255,253,248,0.86);
+  outline: none;
+}
+
+.award-arrow span {
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-top: 2px solid var(--text);
+  border-left: 2px solid var(--text);
+}
+
+.award-arrow--prev {
+  left: 0.65rem;
+}
+
+.award-arrow--next {
+  right: 0.65rem;
+}
+
+.award-arrow--prev span {
+  transform: rotate(-45deg);
+}
+
+.award-arrow--next span {
+  transform: rotate(135deg);
+}
+
+.award-wheel-hint {
+  z-index: 150 !important;
+  right: 1.25rem !important;
+  bottom: 1rem !important;
+  border-radius: 4px !important;
+  border: 1px solid rgba(196,179,155,0.75) !important;
+  background: rgba(255,253,248,0.78) !important;
+}
+
+/* 实习与其他经历：导览 + 70/30 详情 */
+.experience-overview-section {
+  margin-bottom: 1.1rem;
+}
+
+.experience-nav-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.experience-nav-card {
+  min-height: 178px;
+  padding: 1rem;
+  color: var(--text);
+  text-decoration: none;
+  background: rgba(255,253,248,0.9);
+  border: 1px solid rgba(47,42,36,0.72);
+  box-shadow: 0 14px 30px rgba(99,82,61,0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.experience-nav-card span {
+  color: var(--math);
+  font-family: "Courier New", monospace;
+  font-size: 1.45rem;
+  font-weight: 700;
+}
+
+.experience-nav-card strong {
+  font-size: clamp(1.08rem, 1.4vw, 1.26rem);
+}
+
+.experience-nav-card em {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-style: normal;
+}
+
+.experience-detail-card {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(260px, 3fr);
+  gap: clamp(1rem, 2vw, 1.5rem);
+  align-items: stretch;
+  min-height: 430px;
+  padding: clamp(1.35rem, 2.4vw, 2rem) !important;
+  margin-bottom: 1.15rem;
+  background: rgba(255,253,248,0.92);
+  border: 1px solid rgba(47,42,36,0.72);
+  box-shadow: 0 16px 42px rgba(99,82,61,0.09);
+}
+
+.experience-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.experience-copy h2 {
+  font-size: clamp(1.45rem, 2.5vw, 2.25rem) !important;
+  line-height: 1.32;
+  margin: 0.35rem 0 0.8rem;
+}
+
+.experience-lead {
+  color: var(--muted);
+  font-size: clamp(1rem, 1.3vw, 1.16rem);
+  line-height: 1.85;
+  max-width: 820px;
+  margin-bottom: 1rem;
+}
+
+.experience-points {
+  list-style: none;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.experience-points li {
+  position: relative;
+  padding-left: 1.2rem;
+  color: var(--text);
+  font-size: clamp(0.96rem, 1.15vw, 1.06rem);
+  line-height: 1.7;
+}
+
+.experience-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.78em;
+  width: 7px;
+  height: 7px;
+  background: var(--math);
+}
+
+.experience-image-card {
+  position: relative;
+  margin: 0;
+  min-height: 100%;
+  background:
+    linear-gradient(135deg, rgba(255,253,248,0.98), rgba(245,234,219,0.82)),
+    repeating-linear-gradient(45deg, rgba(154,133,103,0.08) 0 9px, transparent 9px 18px);
+  border: 1px solid rgba(196,179,155,0.82);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.experience-image-card figcaption {
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  z-index: 2;
+  color: var(--text);
+  background: rgba(255,253,248,0.78);
+  padding: 0.5rem 0.65rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.project-kicker {
+  color: var(--math);
+  font-family: "Courier New", monospace;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 980px) {
+  .site-nav {
+    justify-content: flex-start !important;
+  }
+  .home-cards--rich,
+  .honors-list--grand,
+  .honor-gallery,
+  .experience-nav-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .edu-hero-panel,
+  .experience-detail-card {
+    grid-template-columns: 1fr !important;
+  }
+  .course-grid--grand {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .award-detail--top,
+  .award-detail {
+    height: auto !important;
+    min-height: 260px !important;
+  }
+  .award-detail__bottomrow,
+  .award-detail__mainrow {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .award-detail__tags {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-cards--rich,
+  .honors-list--grand,
+  .honor-gallery,
+  .experience-nav-grid,
+  .edu-stats--hero {
+    grid-template-columns: 1fr !important;
+  }
+  .award-cover-card {
+    width: 165px !important;
+    height: 240px !important;
+  }
+  .award-arrow {
+    width: 46px;
+    height: 76px;
+  }
+}

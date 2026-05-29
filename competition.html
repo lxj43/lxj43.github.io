@@ -15,21 +15,22 @@
 
   <nav class="site-nav" id="site-nav" aria-label="页面导览"></nav>
 
-  <div class="container">
-    <header class="profile">
+  <div class="container container--wide">
+    <header class="profile page-hero page-hero--compact">
       <img class="avatar-img" src="images/avatar.jpg" alt="李学均证件照" width="120" height="150" />
       <div class="profile-main">
         <h1>竞赛获奖</h1>
-        <p class="tagline">在数学建模、算法竞赛与创新赛事中持续积累建模与决策分析能力；含国家级、省部级及其他获奖证书。</p>
+        <p class="tagline">在数学建模、算法竞赛、数字经济决策与创新创业赛事中持续积累建模、推演和表达能力。</p>
       </div>
     </header>
 
     <main>
-      <section id="competition">
-        <div class="section-head">
-          <h2>获奖总览与证书</h2>
+      <section id="competition" class="competition-section">
+        <div class="section-head section-head--split">
+          <h2>获奖总览与证书展示</h2>
+          <span class="section-note">上方显示奖项介绍，下方证书墙支持滚轮与箭头切换</span>
         </div>
-        <p class="section-intro">下方滚轮同步展示每一项的名称、等级与证书图片；点击「上一项 / 下一项」切换。</p>
+        <p class="section-intro">将鼠标移入下方证书墙区域后，滚动鼠标滚轮即可逐项切换；也可点击证书墙左右两侧的线性箭头切换。未上传图片的奖项会保留证书占位，后续替换同名图片即可。</p>
         <div id="award-carousel-root"></div>
       </section>
     </main>

@@ -15,57 +15,194 @@
 
   <nav class="site-nav" id="site-nav" aria-label="页面导览"></nav>
 
-  <div class="container">
-    <header class="profile">
+  <div class="container container--wide">
+    <header class="profile page-hero">
       <img class="avatar-img" src="images/avatar.jpg" alt="李学均证件照" width="120" height="150" />
       <div class="profile-main">
         <h1>科研经历</h1>
-        <p class="tagline">围绕博弈论、多智能体学习与数字经济应用，开展论文研究与创新创业实践。</p>
+        <p class="tagline">围绕博弈论、多智能体学习与数字经济应用，开展论文研究、创新创业实践和图数据库平台开发。</p>
       </div>
     </header>
 
     <main>
-      <section id="research">
-        <div class="section-head">
-          <h2>科研项目与成果</h2>
+      <section id="research" class="research-overview-section">
+        <div class="section-head section-head--split">
+          <h2>科研项目导览</h2>
+          <span class="section-note">先快速定位，再进入项目板块</span>
         </div>
-        <ul class="entry-list">
-          <li>
-            <p class="entry-title">在投论文（第二作者）· EARS: Equilibrium-Aligned Reward Shaping with Strategic Memory for Decentralized Game-Theoretic Learning</p>
-            <ul class="entry-body">
-              <li>研究内容：提出面向竞争场景的多智能体学习框架 EARS，实现不完全信息博弈下的策略涌现与均衡收敛。</li>
-              <li>负责工作：参与多智能体策略演化机制与实验设计，对复杂博弈环境下的策略稳定性与均衡特征进行分析。</li>
-            </ul>
-          </li>
-          <li>
-            <p class="entry-title">在投论文（第三作者）· 《供应链视角下企业 AI 应用与 ESG 漂绿研究——基于自进化零样本大语言模型的证据》</p>
-            <ul class="entry-body">
-              <li>研究内容：基于自进化零样本大模型识别企业 AI 应用，研究其对企业漂绿行为及供应链溢出效应的影响。</li>
-              <li>负责工作：基于企业行为数据与供应链关系构建博弈模型与 AI 应用测度方法，完成全部实证建模与分析。</li>
-            </ul>
-          </li>
-          <li>
-            <p class="entry-title">国家级大学生创新创业训练计划（核心成员）· 《惠 Python：智慧图谱驱动的场景化编程实训平台》</p>
-            <ul class="entry-body">
-              <li>研究内容：面向高校「AI+教育」教学场景，构建基于智能体交互与个性化推荐的经管学生 Python 学习平台。</li>
-              <li>负责工作：基于学习行为数据构建个性化学习路径模型，参与定制化题库的编写与题目推荐机制算法优化。</li>
-            </ul>
-          </li>
-          <li>
-            <p class="entry-title">国家级大学生创新创业训练计划（核心成员）· 《永远在家——数字化居家养老全过程解决方案》</p>
-            <ul class="entry-body">
-              <li>研究内容：结合人工智能与数字经济场景，构建集数据协同与多主体联动于一体的数字化居家养老解决方案。</li>
-              <li>负责工作：构建社区、老人与医院多主体博弈关系模型，引入 AI 辅助决策，优化居家养老服务与资源配置。</li>
-            </ul>
-          </li>
-          <li>
-            <p class="entry-title">软件著作权 · 《惠 Graph 图数据库可视化平台 V1.0》</p>
-            <ul class="entry-body">
-              <li>研究内容：面向复杂关系网络分析，开发基于图数据库的知识图谱可视化平台，并利用多智能体开展智能分析。</li>
-              <li>负责工作：基于复杂关系网络开展图建模与关联分析，通过多智能体辅助知识图谱构建与多节点协同分析。</li>
-            </ul>
-          </li>
-        </ul>
+        <p class="section-intro">下方卡片保留原有列条信息，并作为页面内跳转入口；每个项目板块预留了研究问题、方法框架、负责工作、成果形式和后续可补充内容。</p>
+        <div class="research-nav-grid" aria-label="科研项目导览">
+          <a href="#ears" class="research-nav-card">
+            <span>01</span>
+            <strong>EARS 多智能体博弈学习</strong>
+            <em>在投论文 · 第二作者</em>
+          </a>
+          <a href="#ai-esg" class="research-nav-card">
+            <span>02</span>
+            <strong>企业 AI 应用与 ESG 漂绿</strong>
+            <em>在投论文 · 第三作者</em>
+          </a>
+          <a href="#hui-python" class="research-nav-card">
+            <span>03</span>
+            <strong>惠 Python 编程实训平台</strong>
+            <em>国家级大创 · 核心成员</em>
+          </a>
+          <a href="#home-care" class="research-nav-card">
+            <span>04</span>
+            <strong>永远在家：数字化居家养老</strong>
+            <em>国家级大创 · 核心成员</em>
+          </a>
+          <a href="#hui-graph" class="research-nav-card">
+            <span>05</span>
+            <strong>惠 Graph 图数据库可视化平台</strong>
+            <em>软件著作权</em>
+          </a>
+        </div>
+      </section>
+
+      <section id="ears" class="project-panel">
+        <div class="project-panel__head">
+          <div>
+            <p class="eyebrow">Paper · Multi-Agent Learning</p>
+            <h2>EARS: Equilibrium-Aligned Reward Shaping with Strategic Memory for Decentralized Game-Theoretic Learning</h2>
+          </div>
+          <div class="project-badge">在投论文 · 第二作者</div>
+        </div>
+        <div class="project-meta">
+          <span>博弈论学习</span><span>不完全信息博弈</span><span>策略涌现</span><span>均衡收敛</span>
+        </div>
+        <div class="project-layout">
+          <article>
+            <h3>研究问题</h3>
+            <p>面向竞争场景中的分散式多智能体学习，探索如何在不完全信息环境中引导智能体形成更稳定的策略演化路径，并观察均衡特征。</p>
+          </article>
+          <article>
+            <h3>我的工作</h3>
+            <p>参与多智能体策略演化机制与实验设计，对复杂博弈环境下的策略稳定性、收益变化与均衡收敛特征进行分析。</p>
+          </article>
+        </div>
+        <div class="method-strip">
+          <span>环境设定</span><i></i><span>奖励塑形</span><i></i><span>策略记忆</span><i></i><span>实验对照</span><i></i><span>均衡分析</span>
+        </div>
+        <div class="project-placeholder">
+          <strong>后续可补充：</strong>论文摘要图、核心算法伪代码、实验环境截图、关键曲线、论文链接或预印本链接。
+        </div>
+      </section>
+
+      <section id="ai-esg" class="project-panel">
+        <div class="project-panel__head">
+          <div>
+            <p class="eyebrow">Paper · AI Measurement & ESG</p>
+            <h2>供应链视角下企业 AI 应用与 ESG 漂绿研究</h2>
+          </div>
+          <div class="project-badge">在投论文 · 第三作者</div>
+        </div>
+        <div class="project-meta">
+          <span>企业 AI 应用识别</span><span>ESG 漂绿</span><span>供应链溢出</span><span>实证建模</span>
+        </div>
+        <div class="project-layout">
+          <article>
+            <h3>研究问题</h3>
+            <p>基于自进化零样本大语言模型识别企业 AI 应用，研究企业 AI 应用对 ESG 漂绿行为以及供应链上下游主体的溢出影响。</p>
+          </article>
+          <article>
+            <h3>我的工作</h3>
+            <p>基于企业行为数据与供应链关系构建博弈模型和 AI 应用测度方法，并完成全部实证建模与分析。</p>
+          </article>
+        </div>
+        <div class="method-strip">
+          <span>文本识别</span><i></i><span>AI 测度</span><i></i><span>供应链匹配</span><i></i><span>博弈解释</span><i></i><span>实证检验</span>
+        </div>
+        <div class="project-placeholder">
+          <strong>后续可补充：</strong>变量构建说明、识别流程图、回归表截图、稳健性检验、研究贡献摘要。
+        </div>
+      </section>
+
+      <section id="hui-python" class="project-panel">
+        <div class="project-panel__head">
+          <div>
+            <p class="eyebrow">Innovation Project · AI + Education</p>
+            <h2>惠 Python：智慧图谱驱动的场景化编程实训平台</h2>
+          </div>
+          <div class="project-badge">国家级大创 · 核心成员</div>
+        </div>
+        <div class="project-meta">
+          <span>AI+教育</span><span>知识图谱</span><span>个性化推荐</span><span>经管学生 Python 学习</span>
+        </div>
+        <div class="project-layout">
+          <article>
+            <h3>项目场景</h3>
+            <p>面向高校经管类学生 Python 学习需求，构建结合智能体交互、知识图谱和个性化推荐的场景化编程实训平台。</p>
+          </article>
+          <article>
+            <h3>我的工作</h3>
+            <p>基于学习行为数据构建个性化学习路径模型，参与定制化题库编写，并优化题目推荐机制算法。</p>
+          </article>
+        </div>
+        <div class="method-strip">
+          <span>学习画像</span><i></i><span>知识点图谱</span><i></i><span>题库标签</span><i></i><span>路径推荐</span><i></i><span>反馈迭代</span>
+        </div>
+        <div class="project-placeholder">
+          <strong>后续可补充：</strong>平台截图、功能模块图、推荐算法流程、题库示例、项目路演材料入口。
+        </div>
+      </section>
+
+      <section id="home-care" class="project-panel">
+        <div class="project-panel__head">
+          <div>
+            <p class="eyebrow">Innovation Project · Digital Elderly Care</p>
+            <h2>永远在家：数字化居家养老全过程解决方案</h2>
+          </div>
+          <div class="project-badge">国家级大创 · 核心成员</div>
+        </div>
+        <div class="project-meta">
+          <span>智慧居家养老</span><span>多主体联动</span><span>资源配置</span><span>AI 辅助决策</span>
+        </div>
+        <div class="project-layout">
+          <article>
+            <h3>项目场景</h3>
+            <p>结合人工智能与数字经济场景，构建集数据协同、服务调度和多主体联动于一体的数字化居家养老解决方案。</p>
+          </article>
+          <article>
+            <h3>我的工作</h3>
+            <p>构建社区、老人与医院之间的多主体博弈关系模型，引入 AI 辅助决策，优化居家养老服务响应与资源配置。</p>
+          </article>
+        </div>
+        <div class="method-strip">
+          <span>主体识别</span><i></i><span>需求分层</span><i></i><span>博弈建模</span><i></i><span>资源匹配</span><i></i><span>服务反馈</span>
+        </div>
+        <div class="project-placeholder">
+          <strong>后续可补充：</strong>服务流程图、用户画像、社区/医院协同图、原型页面、调研数据摘要。
+        </div>
+      </section>
+
+      <section id="hui-graph" class="project-panel">
+        <div class="project-panel__head">
+          <div>
+            <p class="eyebrow">Software Copyright · Graph Database</p>
+            <h2>惠 Graph 图数据库可视化平台 V1.0</h2>
+          </div>
+          <div class="project-badge">软件著作权</div>
+        </div>
+        <div class="project-meta">
+          <span>知识图谱</span><span>图数据库</span><span>复杂关系网络</span><span>多节点关联分析</span>
+        </div>
+        <div class="project-layout">
+          <article>
+            <h3>平台定位</h3>
+            <p>面向复杂关系网络分析，开发基于图数据库的知识图谱可视化平台，并利用多智能体辅助智能分析。</p>
+          </article>
+          <article>
+            <h3>我的工作</h3>
+            <p>基于复杂关系网络开展图建模与关联分析，通过多智能体辅助知识图谱构建与多节点协同分析。</p>
+          </article>
+        </div>
+        <div class="method-strip">
+          <span>图建模</span><i></i><span>节点关系</span><i></i><span>可视化</span><i></i><span>智能体分析</span><i></i><span>结果解释</span>
+        </div>
+        <div class="project-placeholder">
+          <strong>后续可补充：</strong>平台截图、图谱样例、节点/边字段说明、软著证书图片、功能演示链接。
+        </div>
       </section>
     </main>
 
