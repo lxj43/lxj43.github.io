@@ -213,8 +213,14 @@ a.home-card:focus-visible,
 .home-cards .home-card:hover,
 .home-cards .home-card:focus-visible {
   background: #fffdf8;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   box-shadow: 5px 5px 0 rgba(210, 196, 175, 0.62);
+}
+
+a.home-card:hover .home-card__visual,
+.home-cards .home-card:hover .home-card__visual {
+  transform: translateY(-2px) scale(1.02);
+  transition: transform 0.25s ease;
 }
 
 .home-card__icon {
@@ -930,12 +936,19 @@ footer .footer-doodle {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
+  html {
     scroll-behavior: auto !important;
+  }
+
+  /* 仅关闭装饰性背景动画，保留奖状循环带与证书切换过渡 */
+  body::before,
+  body::after,
+  .sketch-deco {
+    animation: none !important;
+  }
+
+  .award-marquee__track {
+    animation-duration: 120s !important;
   }
 }
 
@@ -1393,6 +1406,13 @@ footer .footer-doodle {
   inset: 0;
 }
 
+.award-coverflow__rail .award-cover-card {
+  --offset: 0;
+  --abs-offset: 0;
+  --scale: 1;
+  --z: 10;
+}
+
 .award-cover-card {
   position: absolute;
   left: 50%;
@@ -1814,8 +1834,10 @@ footer .footer-doodle {
     transform:
       translate(-50%, -50%)
       translateX(calc(var(--offset) * 58px))
+      translateY(calc(var(--abs-offset) * 6px))
       rotateY(calc(var(--offset) * -14deg))
-      rotateZ(calc(var(--offset) * -2deg));
+      rotateZ(calc(var(--offset) * -2deg))
+      scale(var(--scale));
   }
 
   .award-mini-card {
@@ -1829,11 +1851,6 @@ footer .footer-doodle {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .award-marquee__track {
-    animation: none !important;
-  }
-}
 
 /* ===== 2026-05 大气版修订：大块面、低圆角、滚轮式证书墙 ===== */
 :root {
@@ -2485,6 +2502,19 @@ section > h2 {
   font-family: "Courier New", monospace;
   font-weight: 700;
   letter-spacing: 0.08em;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+html.js-enabled #home-award-marquee-root .award-marquee__track {
+  animation-play-state: running;
+}
+
+html:not(.js-enabled) #home-award-marquee-root .award-marquee__track {
+  animation: none;
+}
+
+html.js-enabled #award-carousel-root.is-ready .award-coverflow {
+  opacity: 1;
 }
 
 .home-cards--rich .home-card__icon {

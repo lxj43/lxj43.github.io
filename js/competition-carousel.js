@@ -258,6 +258,7 @@ function buildOverview() {
 
 function initCompetitionCarousel(root) {
   if (!root || AWARDS.length === 0) return;
+  root.classList.add("is-ready");
 
   const cards = AWARDS.map((a, i) => `
     <button class="award-cover-card" type="button" data-index="${i}" aria-label="定位到 ${escapeHtml(a.name)}">
@@ -417,7 +418,18 @@ function initHomeAwardMarquee(root) {
   watchMissingImages(root);
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  initCompetitionCarousel(document.getElementById("award-carousel-root"));
-  initHomeAwardMarquee(document.getElementById("home-award-marquee-root"));
-});
+function bootAwardWidgets() {
+  document.documentElement.classList.add("js-enabled");
+  try {
+    initCompetitionCarousel(document.getElementById("award-carousel-root"));
+    initHomeAwardMarquee(document.getElementById("home-award-marquee-root"));
+  } catch (error) {
+    console.error("奖状/竞赛组件初始化失败：", error);
+  }
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", bootAwardWidgets);
+} else {
+  bootAwardWidgets();
+}
