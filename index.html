@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="李学均 - 个人简介、教育经历、科研竞赛与其他经历" />
-  <title>李学均 · 个人简介</title>
+  <meta name="description" content="李学均 - 个人主页：教育背景、科研经历、竞赛获奖与实习经历" />
+  <title>李学均 · 个人主页</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -14,10 +14,11 @@
   <div class="bg-gradient" aria-hidden="true"></div>
 
   <nav class="site-nav" aria-label="页面导览">
-    <a href="./">首页</a>
-    <a href="education.html">教育经历</a>
-    <a href="research.html">科研竞赛</a>
-    <a href="other.html">其他经历</a>
+    <a href="./" aria-current="page">主页</a>
+    <a href="education.html">教育背景</a>
+    <a href="research.html">科研经历</a>
+    <a href="competition.html">竞赛获奖</a>
+    <a href="other.html">实习与其他经历</a>
   </nav>
 
   <div class="container" id="top">
@@ -40,107 +41,39 @@
     </header>
 
     <main>
-      <section id="education">
-        <h2>教育经历</h2>
-        <div class="edu-header">
-          <p class="school">天津财经大学 · 数字经济（应用经济学 B+）</p>
-          <p class="detail">2023.09 — 至今</p>
+      <section class="home-hub" aria-labelledby="home-hub-title">
+        <div class="section-head">
+          <h2 id="home-hub-title">站点导览</h2>
         </div>
-        <div class="edu-stats">
-          <span>专业排名 3/76</span>
-          <span>GPA 3.79 / 4.0</span>
-          <span>CET-4 549</span>
-          <span>CET-6 474</span>
-        </div>
-
-        <h3>主要课程</h3>
-        <ul class="course-grid">
-          <li>大数据管理方法与应用<span class="score">98</span></li>
-          <li>金融衍生工具<span class="score">97</span></li>
-          <li>证券投资学<span class="score">96</span></li>
-          <li>金融大数据分析与应用<span class="score">97</span></li>
-          <li>高等数学 II<span class="score">98</span></li>
-          <li>线性代数<span class="score">97</span></li>
-        </ul>
-
-        <h3>荣誉奖项</h3>
-        <ul class="honors-list">
-          <li>校优秀学生（2024—2025 学年）</li>
-          <li>校一等奖学金（2023—2024 学年）</li>
-          <li>校二等奖学金（2024—2025 学年）</li>
-          <li>院智汇精英荣誉称号（2024—2025 学年）</li>
-        </ul>
-      </section>
-
-      <section id="research-competition">
-        <h2>科研竞赛</h2>
-
-        <h3>科研经历</h3>
-        <ul class="entry-list">
+        <p class="section-intro">点击下方板块查看详细内容。</p>
+        <ul class="home-cards">
           <li>
-            <p class="entry-title">在投论文（第二作者）· EARS: Equilibrium-Aligned Reward Shaping with Strategic Memory for Decentralized Game-Theoretic Learning</p>
-            <ul class="entry-body">
-              <li>研究内容：提出面向竞争场景的多智能体学习框架 EARS，实现不完全信息博弈下的策略涌现与均衡收敛。</li>
-              <li>负责工作：参与多智能体策略演化机制与实验设计，对复杂博弈环境下的策略稳定性与均衡特征进行分析。</li>
-            </ul>
+            <a class="home-card" href="education.html">
+              <span class="home-card__icon" aria-hidden="true">EDU</span>
+              <span class="home-card__title">教育背景</span>
+              <span class="home-card__desc">院校、成绩、课程与校内荣誉</span>
+            </a>
           </li>
           <li>
-            <p class="entry-title">在投论文（第三作者）· 《供应链视角下企业 AI 应用与 ESG 漂绿研究——基于自进化零样本大语言模型的证据》</p>
-            <ul class="entry-body">
-              <li>研究内容：基于自进化零样本大模型识别企业 AI 应用，研究其对企业漂绿行为及供应链溢出效应的影响。</li>
-              <li>负责工作：基于企业行为数据与供应链关系构建博弈模型与 AI 应用测度方法，完成全部实证建模与分析。</li>
-            </ul>
+            <a class="home-card" href="research.html">
+              <span class="home-card__icon" aria-hidden="true">R&D</span>
+              <span class="home-card__title">科研经历</span>
+              <span class="home-card__desc">论文、大创项目与软件著作权</span>
+            </a>
           </li>
           <li>
-            <p class="entry-title">国家级大学生创新创业训练计划（核心成员）· 《惠 Python：智慧图谱驱动的场景化编程实训平台》</p>
-            <ul class="entry-body">
-              <li>研究内容：面向高校「AI+教育」教学场景，构建基于智能体交互与个性化推荐的经管学生 Python 学习平台。</li>
-              <li>负责工作：基于学习行为数据构建个性化学习路径模型，参与定制化题库的编写与题目推荐机制算法优化。</li>
-            </ul>
+            <a class="home-card" href="competition.html">
+              <span class="home-card__icon" aria-hidden="true">CMP</span>
+              <span class="home-card__title">竞赛获奖</span>
+              <span class="home-card__desc">获奖总览、证书滚轮展示</span>
+            </a>
           </li>
           <li>
-            <p class="entry-title">国家级大学生创新创业训练计划（核心成员）· 《永远在家——数字化居家养老全过程解决方案》</p>
-            <ul class="entry-body">
-              <li>研究内容：结合人工智能与数字经济场景，构建集数据协同与多主体联动于一体的数字化居家养老解决方案。</li>
-              <li>负责工作：构建社区、老人与医院多主体博弈关系模型，引入 AI 辅助决策，优化居家养老服务与资源配置。</li>
-            </ul>
-          </li>
-          <li>
-            <p class="entry-title">软件著作权 · 《惠 Graph 图数据库可视化平台 V1.0》</p>
-            <ul class="entry-body">
-              <li>研究内容：面向复杂关系网络分析，开发基于图数据库的知识图谱可视化平台，并利用多智能体开展智能分析。</li>
-              <li>负责工作：基于复杂关系网络开展图建模与关联分析，通过多智能体辅助知识图谱构建与多节点协同分析。</li>
-            </ul>
-          </li>
-        </ul>
-
-        <h3>竞赛获奖</h3>
-        <ul class="competition-list">
-          <li><span class="award">国家一等奖</span><span class="event">2025 年高教社杯全国大学生数学建模竞赛</span></li>
-          <li><span class="award">国家一等奖</span><span class="event">2025 年 iCAN 大学生创新创业大赛「精创杯」全国数字经济决策创新挑战赛</span></li>
-          <li><span class="award">国家二等奖</span><span class="event">2024 年高教社杯全国大学生数学建模竞赛</span></li>
-          <li><span class="award">国家二等奖</span><span class="event">2026 年第十二届全国大学生能源经济学术创意大赛</span></li>
-          <li><span class="award">国家二等奖</span><span class="event">2026 年全国企业模拟竞争大赛</span></li>
-          <li><span class="award">国家二等奖</span><span class="event">2025 年第七届全球校园人工智能算法精英大赛</span></li>
-          <li><span class="award">国家二等奖</span><span class="event">2024 年全国大学生数字贸易综合技能大赛</span></li>
-          <li><span class="award">国家三等奖</span><span class="event">2025 年美国大学生数学建模竞赛</span></li>
-        </ul>
-      </section>
-
-      <section id="other">
-        <h2>其他经历</h2>
-        <ul class="entry-list other-list">
-          <li>
-            <p class="entry-title">中科闻歌 · 博弈论与决策算法研究员</p>
-            <p class="entry-desc">对金融风险管理中多主体关联分析并搭建智能体，实时监控风险节点。</p>
-          </li>
-          <li>
-            <p class="entry-title">温州昶宏电子科技有限公司 · 财务助理</p>
-            <p class="entry-desc">搭建财务分析智能体可视化收支数据，并辅助撰写公司经营分析报告。</p>
-          </li>
-          <li>
-            <p class="entry-title">瑞安站春运「暖冬行动」· 青年志愿者</p>
-            <p class="entry-desc">负责智慧票务系统现场引导工作，并协助百余位乘客完成移动端操作。</p>
+            <a class="home-card" href="other.html">
+              <span class="home-card__icon" aria-hidden="true">JOB</span>
+              <span class="home-card__title">实习与其他经历</span>
+              <span class="home-card__desc">实习岗位与志愿服务</span>
+            </a>
           </li>
         </ul>
       </section>
