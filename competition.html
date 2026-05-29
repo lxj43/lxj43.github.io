@@ -13,13 +13,7 @@
 <body>
   <div class="bg-gradient" aria-hidden="true"></div>
 
-  <nav class="site-nav" aria-label="页面导览">
-    <a href="./">主页</a>
-    <a href="education.html">教育背景</a>
-    <a href="research.html">科研经历</a>
-    <a href="competition.html" aria-current="page">竞赛获奖</a>
-    <a href="other.html">实习与其他经历</a>
-  </nav>
+  <nav class="site-nav" id="site-nav" aria-label="页面导览"></nav>
 
   <div class="container">
     <header class="profile">
@@ -45,6 +39,7 @@
     </footer>
   </div>
 
+  <script src="js/site-nav.js"></script>
   <script src="js/competition-carousel.js"></script>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
