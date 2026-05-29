@@ -486,6 +486,256 @@ section h3:first-of-type {
   min-width: 12rem;
 }
 
+/* 竞赛获奖总览 + 双滚轮 */
+.section-intro {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin: -0.35rem 0 1.1rem;
+}
+
+.award-overview {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.65rem;
+  margin-bottom: 1.25rem;
+}
+
+.award-stat {
+  text-align: center;
+  padding: 0.85rem 0.5rem;
+  background: rgba(251, 247, 239, 0.85);
+  border: 1.8px solid rgba(47, 42, 36, 0.82);
+  border-radius: 12px;
+  box-shadow: 3px 3px 0 rgba(210, 196, 175, 0.55);
+}
+
+.award-stat__num {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--math);
+  font-family: "Courier New", monospace;
+  line-height: 1.2;
+}
+
+.award-stat__label {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.award-carousel__wheels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.wheel-panel {
+  min-width: 0;
+}
+
+.wheel-panel__label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--sketch);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0.45rem;
+}
+
+.wheel-viewport {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  border: 1.8px solid rgba(47, 42, 36, 0.82);
+  border-radius: 12px;
+  background: rgba(255, 253, 248, 0.72);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.65);
+  perspective: 900px;
+}
+
+.wheel-viewport::before,
+.wheel-viewport::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 48px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.wheel-viewport::before {
+  top: 0;
+  background: linear-gradient(to bottom, var(--bg-warm) 10%, transparent);
+}
+
+.wheel-viewport::after {
+  bottom: 0;
+  background: linear-gradient(to top, var(--bg-warm) 10%, transparent);
+}
+
+.wheel-track {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding: 10px 0.75rem;
+  transition: transform 0.52s cubic-bezier(0.33, 1, 0.45, 1);
+  will-change: transform;
+}
+
+.wheel-item {
+  flex-shrink: 0;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0.38;
+  transform: scale(0.94) rotateX(8deg);
+  transform-origin: center center;
+  transition: opacity 0.45s ease, transform 0.52s cubic-bezier(0.33, 1, 0.45, 1);
+}
+
+.wheel-item.is-adjacent {
+  opacity: 0.62;
+  transform: scale(0.97) rotateX(4deg);
+}
+
+.wheel-item.is-active {
+  opacity: 1;
+  transform: scale(1) rotateX(0deg);
+}
+
+.wheel-item--text {
+  padding: 0.65rem 0.5rem;
+}
+
+.wheel-item__level {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #fffdf8;
+  background: var(--accent);
+  border: 1.5px solid var(--text);
+  border-radius: 6px;
+  padding: 0.18rem 0.5rem;
+  margin-bottom: 0.55rem;
+}
+
+.wheel-item__name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+.wheel-item--image {
+  padding: 0.35rem;
+}
+
+.cert-frame {
+  position: relative;
+  width: 100%;
+  height: 190px;
+  border: 1.5px dashed var(--border-sketch);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cert-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.cert-frame.is-missing img {
+  display: none;
+}
+
+.cert-placeholder {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.75rem;
+  text-align: center;
+  color: var(--muted);
+}
+
+.cert-frame.is-missing .cert-placeholder {
+  display: flex;
+}
+
+.cert-placeholder p {
+  font-size: 0.82rem;
+}
+
+.cert-placeholder code {
+  font-size: 0.68rem;
+  word-break: break-all;
+  color: var(--sketch);
+  background: var(--accent-soft);
+  padding: 0.2rem 0.35rem;
+  border-radius: 4px;
+}
+
+.award-carousel__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.wheel-btn {
+  font-family: inherit;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--accent-soft);
+  border: 1.8px solid rgba(47, 42, 36, 0.82);
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 rgba(210, 196, 175, 0.55);
+  transition: transform 0.15s ease, background 0.2s ease, opacity 0.2s ease;
+}
+
+.wheel-btn:hover:not(:disabled) {
+  background: #fffdf8;
+  transform: translateY(-1px);
+}
+
+.wheel-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.wheel-indicator {
+  font-size: 0.9rem;
+  color: var(--muted);
+  min-width: 4rem;
+  text-align: center;
+}
+
+.wheel-indicator__current {
+  font-weight: 700;
+  color: var(--math);
+  font-family: "Courier New", monospace;
+  font-size: 1.1rem;
+}
+
 .other-list .entry-desc {
   font-size: 0.88rem;
   color: var(--muted);
@@ -552,6 +802,26 @@ footer .footer-doodle {
 
   .profile-tags {
     justify-content: center;
+  }
+
+  .award-overview {
+    grid-template-columns: 1fr;
+  }
+
+  .award-carousel__wheels {
+    grid-template-columns: 1fr;
+  }
+
+  .wheel-viewport {
+    height: 200px;
+  }
+
+  .wheel-item {
+    min-height: 180px;
+  }
+
+  .cert-frame {
+    height: 168px;
   }
 }
 
