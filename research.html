@@ -72,17 +72,11 @@
       </section>
 
       <section id="competition">
-        <h2>竞赛获奖</h2>
-        <ul class="competition-list">
-          <li><span class="award">国家一等奖</span><span class="event">2025 年高教社杯全国大学生数学建模竞赛</span></li>
-          <li><span class="award">国家一等奖</span><span class="event">2025 年 iCAN 大学生创新创业大赛「精创杯」全国数字经济决策创新挑战赛</span></li>
-          <li><span class="award">国家二等奖</span><span class="event">2024 年高教社杯全国大学生数学建模竞赛</span></li>
-          <li><span class="award">国家二等奖</span><span class="event">2026 年第十二届全国大学生能源经济学术创意大赛</span></li>
-          <li><span class="award">国家二等奖</span><span class="event">2026 年全国企业模拟竞争大赛</span></li>
-          <li><span class="award">国家二等奖</span><span class="event">2025 年第七届全球校园人工智能算法精英大赛</span></li>
-          <li><span class="award">国家二等奖</span><span class="event">2024 年全国大学生数字贸易综合技能大赛</span></li>
-          <li><span class="award">国家三等奖</span><span class="event">2025 年美国大学生数学建模竞赛</span></li>
-        </ul>
+        <div class="section-head">
+          <h2>竞赛获奖</h2>
+        </div>
+        <p class="section-intro">下方滚轮同步展示每一项竞赛的名称、等级与证书图片；点击「上一项 / 下一项」切换。</p>
+        <div id="award-carousel-root"></div>
       </section>
     </main>
 
@@ -91,6 +85,7 @@
     </footer>
   </div>
 
+  <script src="js/competition-carousel.js"></script>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
